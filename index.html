@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Ahad - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f9fafb;
+            --text-color: #374151;
+            --heading-color: #111827;
+            --accent-color: #4f46e5;
+            --accent-hover: #4338ca;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --soft-gray: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--soft-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--soft-gray);
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-list {
+            font-size: 0.9rem;
+            color: var(--soft-gray);
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .project-title-group h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .project-subtitle {
+            font-size: 0.875rem;
+            color: var(--soft-gray);
+        }
+
+        .toggle-icon {
+            font-size: 1.25rem;
+            color: var(--soft-gray);
+            transition: transform 0.3s ease;
+        }
+
+        .project-details {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background-color: #fcfcfc;
+            border-top: 1px solid transparent;
+        }
+
+        .project-card.active .project-details {
+            padding-bottom: 1.5rem;
+            border-top-color: var(--border-color);
+            transition: max-height 0.5s ease-in, padding 0.3s ease;
+        }
+
+        .project-card.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .project-section-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-details ul {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-details li {
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .tech-stack-tag {
+            display: inline-block;
+            background-color: #eef2ff;
+            color: var(--accent-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item, .cert-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+            flex-wrap: wrap;
+        }
+
+        .institution {
+            font-weight: 600;
+            color: var(--heading-color);
+        }
+
+        .year {
+            color: var(--soft-gray);
+            font-size: 0.9rem;
+        }
+
+        .degree {
+            font-style: italic;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .coursework {
+            font-size: 0.9rem;
+            color: var(--soft-gray);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--soft-gray);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            .toggle-icon {
+                align-self: flex-end;
+                margin-top: -1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Abdul Ahad</h1>
+        <p class="subtitle">Architecting Machine Learning Pipelines & Cross-Platform Applications</p>
+        <div class="social-links">
+            <a href="mailto:099ahadabdul@gmail.com">Email</a>
+            <a href="https://github.com/990aa" target="_blank">GitHub</a>
+            <a href="https://huggingface.co/a-01a" target="_blank">Hugging Face</a>
+            <a href="https://www.linkedin.com/in/01ahad/" target="_blank">LinkedIn</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>
+                I specialize in modeling with LSTMs, transfer learning, and implementing algorithms deployed via FastAPI microservices. 
+                My current technical focus involves training convolutional architectures for computer vision tasks, implementing transformer-based models for natural language understanding, and building with LangChain and LlamaIndex.
+            </p>
+            <p>
+                On my Hugging Face profile, I experiment with developing models and fine-tuning pre-trained models. 
+                My infrastructure interests include Ray for distributed computing, DuckDB/Polars for high-performance analytics, and Pydantic for runtime type validation. 
+                I study production ML through frameworks like mem0 for persistent agent memory and marimo for reproducible computational notebooks.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <div class="skill-list">Python, Java, SQL, C/C++, Typescript, HTML/CSS, Dart, Rust, Go, Kotlin, C#</div>
+            </div>
+            <div class="skill-category">
+                <h3>AI & ML</h3>
+                <div class="skill-list">PyTorch, TensorFlow, Keras, Scikit-learn, XGBoost, CatBoost, LightGBM, Hugging Face, Transformers, OpenCV, YOLO, Ultralytics, MediaPipe, Spacy</div>
+            </div>
+            <div class="skill-category">
+                <h3>GenAI & LLM</h3>
+                <div class="skill-list">LangChain, LlamaIndex, LangGraph, CrewAI, AutoGen, BeeAI, Genkit, vLLM, Unsloth, llama.cpp, Ollama, Vector Databases</div>
+            </div>
+            <div class="skill-category">
+                <h3>Data Analysis</h3>
+                <div class="skill-list">Pandas, Polars, DuckDB, NumPy, SciPy, Matplotlib, Seaborn, Plotly</div>
+            </div>
+            <div class="skill-category">
+                <h3>Cloud & Backend</h3>
+                <div class="skill-list">FastAPI, Django, Flask, Streamlit, Gradio, Node.js, Uvicorn/Gunicorn, Celery, Redis, AWS (SageMaker, Rekognition), AzureML, MLFlow, Vercel</div>
+            </div>
+            <div class="skill-category">
+                <h3>Frontend & Mobile</h3>
+                <div class="skill-list">React, Next.js, Vue.js, Flutter, React Native, Electron, Capacitor, Angular</div>
+            </div>
+            <div class="skill-category">
+                <h3>DevOps & Databases</h3>
+                <div class="skill-list">PostgreSQL, MySQL, SQLite, MongoDB, Supabase, NextCloud, Docker, Kubernetes, Git/GitHub, GitLab, Bash/PowerShell</div>
+            </div>
+            <div class="skill-category">
+                <h3>Software & Tools</h3>
+                <div class="skill-list">LLVM, .NET, Inno Setup, Visual Studio, Anaconda, Android Studio, Eclipse, MS Office, Google Workspace</div>
+            </div>
+            <div class="skill-category">
+                <h3>Spoken Languages</h3>
+                <div class="skill-list">English (C1 IELTS), Hindi (Native), French (Elementary), Japanese (Elementary)</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        
+        <!-- Project 1 -->
+        <div class="project-card">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>Kivixa: Intelligent Research & Note-Taking Workspace</h3>
+                    <p class="project-subtitle">High-performance, cross-platform productivity environment with local AI</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <p><a href="https://github.com/990aa/kivixa" target="_blank">View Repository</a></p>
+                <div class="project-section-title">Overview</div>
+                <p>Built to bridge the gap between fluid user interfaces and local AI inference, running natively on Windows and Android without cloud APIs.</p>
+                
+                <div class="project-section-title">Key Features</div>
+                <ul>
+                    <li><strong>Local Intelligence:</strong> On-device LLM inference (Phi-4) for context-aware assistance.</li>
+                    <li><strong>Knowledge Graph:</strong> Rust-powered dynamic linking of notes and concepts.</li>
+                    <li><strong>PDF & Annotation:</strong> Professional-grade PDF tools with layer-based annotation.</li>
+                    <li><strong>Scripting:</strong> Integrated Lua scripting for automation.</li>
+                </ul>
+
+                <div class="project-section-title">Technical Highlights</div>
+                <ul>
+                    <li><strong>Local AI Integration:</strong> Custom Rust-based interface for Phi-4 using llama.cpp with hardware acceleration.</li>
+                    <li><strong>Cross-Platform FFI:</strong> Robust bridge between Dart (Flutter) and Rust for heavy computation.</li>
+                    <li><strong>Handwriting Engine:</strong> Low-latency engine with advanced gesture handling.</li>
+                    <li><strong>Build Optimization:</strong> Ninja and Gradle/CMake scripts for cross-compiling Rust/C++ libraries.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">Flutter (Dart)</span>
+                    <span class="tech-stack-tag">Rust</span>
+                    <span class="tech-stack-tag">C++ (llama.cpp)</span>
+                    <span class="tech-stack-tag">CMake</span>
+                    <span class="tech-stack-tag">Phi-4</span>
+                    <span class="tech-stack-tag">Lua</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>Real-Time Hand Gesture Recognition System</h3>
+                    <p class="project-subtitle">Temporal sequence classification using LSTM</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <p><a href="https://github.com/990aa/Hand-Gesture-Recognition-LSTM" target="_blank">View Repository</a></p>
+                <div class="project-section-title">Overview</div>
+                <p>A temporal sequence classification system capable of recognizing dynamic hand gestures in real-time by modeling time-dependent data.</p>
+
+                <div class="project-section-title">Algorithmic Strategy</div>
+                <ul>
+                    <li><strong>Sequential Modeling:</strong> Deep RNN architecture using LSTM units for temporal dependencies.</li>
+                    <li><strong>3D Spatial Feature Extraction:</strong> MediaPipe integration for 21 high-fidelity 3D hand landmarks.</li>
+                    <li><strong>Data Augmentation:</strong> Robust pipeline with noise injection, scaling, and translation.</li>
+                    <li><strong>Production Readiness:</strong> Modular inference engine using `uv` for dependency management.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">TensorFlow/Keras</span>
+                    <span class="tech-stack-tag">MediaPipe</span>
+                    <span class="tech-stack-tag">OpenCV</span>
+                    <span class="tech-stack-tag">NumPy</span>
+                    <span class="tech-stack-tag">Python</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>Hybrid Image Classification: SVM with Deep Feature Extraction</h3>
+                    <p class="project-subtitle">Fusing Deep Learning with Classical ML</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <p><a href="https://github.com/990aa/Cat-vs-Dog-SVM" target="_blank">View Repository</a></p>
+                <div class="project-section-title">Overview</div>
+                <p>A research-oriented implementation of a hybrid classification pipeline achieving high accuracy with varying computational constraints.</p>
+
+                <div class="project-section-title">Algorithmic Strategy</div>
+                <ul>
+                    <li><strong>Transfer Learning:</strong> VGG16 architecture as a feature extractor (512-dim vectors).</li>
+                    <li><strong>Dimensionality Reduction:</strong> PCA to compress vectors to 256 dims while retaining 95% variance.</li>
+                    <li><strong>SVM Classifier:</strong> RBF kernel fine-tuned via GridSearchCV.</li>
+                    <li><strong>Custom Serialization:</strong> Unified persistence strategy for the entire pipeline.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">TensorFlow (VGG16)</span>
+                    <span class="tech-stack-tag">Scikit-learn (SVM, PCA)</span>
+                    <span class="tech-stack-tag">Pandas</span>
+                    <span class="tech-stack-tag">Matplotlib</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>Interactive Customer Segmentation & Analytics Engine</h3>
+                    <p class="project-subtitle">Full-stack unsupervised learning analytics platform</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <p><a href="https://github.com/990aa/Customer-Segmentation" target="_blank">View Repository</a></p>
+                <div class="project-section-title">Overview</div>
+                <p>Identifies distinct customer personas and visualizes the internal logic of clustering algorithms through an interactive dashboard.</p>
+
+                <div class="project-section-title">Algorithmic Strategy</div>
+                <ul>
+                    <li><strong>Unsupervised Learning:</strong> K-Means clustering with Elbow Method & Silhouette Analysis.</li>
+                    <li><strong>Algorithmic Visualization:</strong> Animation engine showing centroid initialization and updates.</li>
+                    <li><strong>Statistical Validation:</strong> ANOVA tests and stability analysis.</li>
+                    <li><strong>Full-Stack Architecture:</strong> FastAPI backend with Plotly frontend for 3D visualization.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">Python</span>
+                    <span class="tech-stack-tag">FastAPI</span>
+                    <span class="tech-stack-tag">Scikit-learn</span>
+                    <span class="tech-stack-tag">Plotly</span>
+                    <span class="tech-stack-tag">Pandas</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>Advanced House Price Prediction System</h3>
+                    <p class="project-subtitle">Intelligent regression system with ensemble learning</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <p><a href="https://github.com/990aa/House-Price-Prediction" target="_blank">View Repository</a></p>
+                <div class="project-section-title">Overview</div>
+                <p>Employs ensemble learning techniques to predict real estate values with an automated model selection engine.</p>
+
+                <div class="project-section-title">Algorithmic Strategy</div>
+                <ul>
+                    <li><strong>Ensemble Learning:</strong> XGBoost and Random Forest compared against Linear Regression.</li>
+                    <li><strong>Automated Model Selection:</strong> Dynamic evaluation via 5-fold Cross-Validation.</li>
+                    <li><strong>Statistical Confidence:</strong> Prediction engine providing confidence intervals.</li>
+                    <li><strong>System Integration:</strong> FastAPI microservice with interactive dashboard.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">XGBoost</span>
+                    <span class="tech-stack-tag">Scikit-learn</span>
+                    <span class="tech-stack-tag">FastAPI</span>
+                    <span class="tech-stack-tag">NumPy</span>
+                    <span class="tech-stack-tag">Joblib</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <div class="education-header">
+                <span class="institution">Manipal Academy of Higher Education</span>
+                <span class="year">2024 - 2028</span>
+            </div>
+            <div class="degree">B.Tech. (Honours) Computer Science and Engineering (AI & ML)</div>
+            <div class="coursework">
+                <strong>Key Coursework:</strong> Linear Algebra, Calculus, OOP, Quantum Computing, Digital Systems, Discrete Math, Computer Networks, OS, AI, Cloud Computing, Parallel Computing.
+            </div>
+        </div>
+        <div class="education-item">
+            <div class="education-header">
+                <span class="institution">Indian Institute of Technology Madras</span>
+                <span class="year">2024 - 2028</span>
+            </div>
+            <div class="degree">B.S. Data Science and Applications</div>
+            <div class="coursework">
+                <strong>Key Coursework:</strong> Python, DSA, DBMS, Machine Learning, Deep Learning, Generative AI, NLP, LLMs, Computer Vision, MLOps.
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="cert-item">
+            <div class="education-header">
+                <span class="institution">AWS Academy Graduate: Machine Learning Training</span>
+            </div>
+            <div class="coursework">
+                <a href="https://www.credly.com/badges/bbf438ab-51c2-43db-a26b-8e5e1115e555/linked_in_profile" target="_blank">View Credential</a>
+            </div>
+        </div>
+        <div class="cert-item">
+            <div class="education-header">
+                <span class="institution">RAG & Agentic AI Professional Certificate</span>
+            </div>
+            <div class="coursework">
+                Certified in LangChain, LlamaIndex, and Agentic Frameworks (CrewAI, AutoGen). <a href="https://www.coursera.org/account/accomplishments/specialization/HKUWHVUFU8V5" target="_blank">View Credential</a>
+            </div>
+        </div>
+        <div class="cert-item">
+            <div class="education-header">
+                <span class="institution">MLOps Specialization</span>
+            </div>
+            <div class="coursework">
+                Expertise in Azure ML, MLFlow, and Hugging Face deployment pipelines. <a href="https://www.coursera.org/account/accomplishments/specialization/D17EQ8SD33OL" target="_blank">View Credential</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Abdul Ahad. All rights reserved.</p>
+    </footer>
+</div>
+
+<script>
+    function toggleProject(header) {
+        const card = header.parentElement;
+        const details = card.querySelector('.project-details');
+        
+        // Close other open projects (optional, for accordion style)
+        // document.querySelectorAll('.project-card.active').forEach(c => {
+        //     if (c !== card) {
+        //         c.classList.remove('active');
+        //         c.querySelector('.project-details').style.maxHeight = null;
+        //     }
+        // });
+
+        card.classList.toggle('active');
+        
+        if (card.classList.contains('active')) {
+            details.style.maxHeight = details.scrollHeight + "px";
+        } else {
+            details.style.maxHeight = null;
+        }
+    }
+</script>
+
+</body>
+</html>
