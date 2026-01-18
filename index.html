@@ -37,7 +37,7 @@
 
         /* Sidebar Layout */
         aside {
-            width: 300px;
+            width: 260px;
             background-color: var(--sidebar-bg);
             padding: 3rem 2rem;
             position: fixed;
@@ -51,7 +51,7 @@
         }
 
         main {
-            margin-left: 300px;
+            margin-left: 260px;
             flex: 1;
             padding: 4rem 3rem;
             max-width: 900px;
@@ -406,7 +406,7 @@
                 </div>
                 <div class="skill-category">
                     <h3>DevOps & Databases</h3>
-                    <div class="skill-list">OracleDB, PostgreSQL, MySQL, SQLite, MongoDB, Supabase, NextCloud, Docker, Kubernetes, Git/GitHub, GitLab, Bash/PowerShell</div>
+                    <div class="skill-list">OracleDB, PostgreSQL, MySQL, SQLite, MongoDB, Supabase, NextCloud, Docker, Git/GitHub, GitLab, Bash/PowerShell</div>
                 </div>
                 <div class="skill-category">
                     <h3>Software & Tools</h3>
@@ -462,6 +462,76 @@
                         <span class="tech-stack-tag">CMake</span>
                         <span class="tech-stack-tag">Phi-4</span>
                         <span class="tech-stack-tag">Lua</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: NovelCrafter -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject(this)">
+                    <div class="project-title-group">
+                        <h3>NovelCrafter: Incremental Literary Fine-Tuning</h3>
+                        <p class="project-subtitle">Automated sequential LoRA fine-tuning framework</p>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="project-details">
+                    <div class="project-links">
+                        <a href="https://huggingface.co/a-01a/novelCrafter" target="_blank" title="Hugging Face Model">
+                            <img src="hf-logo.svg" alt="Hugging Face Model" style="width: 1.2rem; height: 1.2rem;">
+                        </a>
+                    </div>
+                    <div class="project-section-title">Overview</div>
+                    <p>An automated framework for sequential LoRA fine-tuning on creative writing datasets. This project implements a memory-efficient pipeline for training Large Language Models (LLMs) on long-form literary works using an incremental learning strategy.</p>
+
+                    <div class="project-section-title">Features</div>
+                    <ul>
+                        <li><strong>Low-Rank Adaptation (LoRA):</strong> Employs Parameter-Efficient Fine-Tuning (PEFT) to inject trainable rank-decomposition matrices into self-attention layers.</li>
+                        <li><strong>Contextual SFT:</strong> Uses Supervised Fine-Tuning with JSON-based instruction-response pairs that include previous chapter context to preserve narrative flow.</li>
+                        <li><strong>Architectural Optimization:</strong> Automatic hardware detection scaling from 1B parameter models (CPU) to 3B models (GPU).</li>
+                        <li><strong>Fault-Tolerant Pipeline:</strong> Automated progress-tracking system enabling interruption recovery and sequential file processing.</li>
+                    </ul>
+
+                    <div class="project-section-title">Technologies</div>
+                    <div>
+                        <span class="tech-stack-tag">Python</span>
+                        <span class="tech-stack-tag">PyTorch</span>
+                        <span class="tech-stack-tag">PEFT (LoRA)</span>
+                        <span class="tech-stack-tag">Transformers</span>
+                        <span class="tech-stack-tag">Hugging Face Hub</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: Signature Verification -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject(this)">
+                    <div class="project-title-group">
+                        <h3>Signature Verification System with Explainable AI</h3>
+                        <p class="project-subtitle">Siamese Neural Network for Offline Authentication</p>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="project-details">
+                    <div class="project-links">
+                        <a href="https://github.com/990aa/sign-verification" target="_blank" title="GitHub Repository"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="project-section-title">Overview</div>
+                    <p>This system utilizes a deep learning approach to determine the authenticity of handwritten signatures by comparing a "query" signature against a known "reference" sample.</p>
+
+                    <div class="project-section-title">Algorithmic Strategy</div>
+                    <ul>
+                        <li><strong>Siamese Architecture:</strong> Dual-branch CNN sharing weights to map signature images into a common embedding space.</li>
+                        <li><strong>Metric Learning:</strong> Uses Contrastive Loss or Triplet Loss to minimize Euclidean distance between genuine pairs and maximize it for forged samples.</li>
+                        <li><strong>Preprocessing Pipeline:</strong> Image normalization, binarization, and noise reduction for robust feature extraction.</li>
+                    </ul>
+
+                    <div class="project-section-title">Technologies</div>
+                    <div>
+                        <span class="tech-stack-tag">Deep Learning</span>
+                        <span class="tech-stack-tag">Computer Vision</span>
+                        <span class="tech-stack-tag">Siamese Networks</span>
+                        <span class="tech-stack-tag">Python</span>
                     </div>
                 </div>
             </div>
@@ -612,6 +682,72 @@
 
         </section>
 
+        <section id="research">
+            <h2>Research</h2>
+            
+            <div class="project-card active">
+                <div class="project-header" style="cursor: default;">
+                   <div class="project-title-group">
+                        <h3>Fair Spectral Topology</h3>
+                        <p class="project-subtitle">Bridging Graph Theory, Optimization, and Algorithmic Fairness</p>
+                   </div>
+                </div>
+                <div class="project-details" style="max-height: none; padding-bottom: 1.2rem; border-top-color: var(--border-color);">
+                    <div class="project-section-title">Abstract</div>
+                    <p>This research addresses the tension between geometric accuracy and demographic parity in unsupervised learning. By incorporating fairness constraints directly into the graph topology construction phase, this approach forces Laplacian eigenvectors to encode cross-group structures. This method eliminates the need for post-hoc corrections by ensuring clusters are balanced during the initial graph construction.</p>
+
+                    <div class="project-section-title">Key Contributions</div>
+                    <ul>
+                        <li><strong>Topological Intervention:</strong> Implements a fairness-aware k-nearest neighbor (k-NN) algorithm that balances node connections between same-group and cross-group neighbors, controlled by a fairness strength parameter $\alpha$.</li>
+                        <li><strong>Mathematical Framework:</strong> Connects graph theory (similarity graphs), optimization (spectral relaxation), and algorithmic fairness (disparate impact).</li>
+                        <li><strong>Computational Efficiency:</strong> Utilizes a sparse formulation and the Lanczos algorithm to achieve near-linear complexity, making it suitable for large-scale datasets.</li>
+                        <li><strong>Empirical Validation:</strong> Demonstrated on synthetic benchmarks to successfully achieve disparate impact ratios near 1.0 while maintaining high clustering quality.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card active">
+                <div class="project-header" style="cursor: default;">
+                   <div class="project-title-group">
+                        <h3>Zero-Cost Decision Systems</h3>
+                        <p class="project-subtitle">Dynamic Programming vs Reinforcement Learning for Sequential Decision Making</p>
+                   </div>
+                </div>
+                <div class="project-details" style="max-height: none; padding-bottom: 1.2rem; border-top-color: var(--border-color);">
+                    <div class="project-section-title">Abstract</div>
+                    <p>This project explores the "From Omniscience to Experience" narrative, positioning heuristic search, dynamic programming (DP), and reinforcement learning (RL) on a spectrum of required environmental knowledge. The research establishes a formal theoretical relationship between Bellman optimality equations and temporal difference (TD) updates, demonstrating how model-free learning approximates model-based computation.</p>
+
+                    <div class="project-section-title">Key Contributions</div>
+                    <ul>
+                        <li><strong>High-Performance Systems Architecture:</strong> Implemented in Rust using trait-based polymorphism to provide a unified benchmarking suite for $A^*$, Value Iteration, and Q-Learning.</li>
+                        <li><strong>Memory Optimizations:</strong> Developed a double-buffered value function for zero-allocation DP iterations and cache-friendly Q-table representations that achieve a 5x memory reduction compared to standard hash-based implementations.</li>
+                        <li><strong>Stochastic Analysis:</strong> Benchmarked algorithm performance in both deterministic and stochastic grid-world environments, quantifying the trade-offs between sample complexity and optimality guarantees.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card active">
+                <div class="project-header" style="cursor: default;">
+                   <div class="project-title-group">
+                        <h3>Riemannian Spectral Dynamics</h3>
+                        <p class="project-subtitle">A Unified Framework for Understanding Neural Network Optimization</p>
+                   </div>
+                </div>
+                <div class="project-details" style="max-height: none; padding-bottom: 1.2rem; border-top-color: var(--border-color);">
+                    <div class="project-section-title">Abstract</div>
+                    <p>This work develops a coherent theoretical framework built on differential geometry, spectral theory, and matrix decompositions to understand neural network training dynamics. It reframes the parameter space as a Riemannian manifold, providing insights into why specific optimization methods, like Natural Gradient Descent, are invariant to reparameterization.</p>
+
+                    <div class="project-section-title">Key Contributions</div>
+                    <ul>
+                        <li><strong>Geometric Perspective:</strong> Formulates the Fisher Information Matrix (FIM) as the natural metric tensor of the statistical manifold, establishing its fundamental connection to the expected Hessian.</li>
+                        <li><strong>Spectral Analysis:</strong> Analyzes local geometry near critical points through eigenvalue decomposition of the Hessian, deriving precise stability conditions for gradient descent based on the spectral radius.</li>
+                        <li><strong>Matrix Structural Dynamics:</strong> Employs Singular Value Decomposition (SVD) to track the "low-rank bias" phenomenon, where weight matrices concentrate energy into top singular modes during training to act as an implicit regularizer.</li>
+                        <li><strong>Loss Landscape Visualization:</strong> Provides experimental validation by computing and visualizing the spectral density of the Hessian at local minima to distinguish between flat and sharp minima.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section id="education">
             <h2>Education</h2>
             <div class="education-item">
@@ -632,7 +768,7 @@
                 </div>
                 <div class="degree">B.S. Data Science and Applications</div>
                 <div class="coursework">
-                    <strong>Key Coursework:</strong> DSA, DBMS, Machine Learning, Deep Learning, Generative AI, NLP, LLMs, Computer Vision, MLOps.
+                    <strong>Key Coursework:</strong> Probability and Optimization, Statistics, DSA, DBMS, Machine Learning, Deep Learning, Generative AI, NLP, LLMs, Computer Vision, MLOps.
                 </div>
             </div>
         </section>
