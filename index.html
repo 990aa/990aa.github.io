@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Cozy, soft aesthetic theme */
-            --bg-color: #fdfcf8;
-            --sidebar-bg: #f5f2eb;
-            --text-color: #44403c;
-            --heading-color: #292524;
-            --accent-color: #78716c;
-            --accent-hover: #57534e;
+            /* Silver/Gray Professional Theme */
+            --bg-color: #f3f4f6;
+            --sidebar-bg: #e5e7eb;
+            --text-color: #374151;
+            --heading-color: #111827;
+            --accent-color: #6b7280;
+            --accent-hover: #4b5563;
             --card-bg: #ffffff;
-            --border-color: #e7e5e4;
-            --soft-gray: #78716c;
+            --border-color: #d1d5db;
+            --soft-gray: #6b7280;
         }
 
         * {
@@ -356,6 +356,17 @@
             </a>
             <a href="https://www.linkedin.com/in/01ahad/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
+
+        <nav style="margin-top: 3rem; width: 100%;">
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.8rem;"><a href="#about" style="font-size: 1.1rem; font-weight: 600;">About</a></li>
+                <li style="margin-bottom: 0.8rem;"><a href="#skills" style="font-size: 1.1rem; font-weight: 600;">Skills</a></li>
+                <li style="margin-bottom: 0.8rem;"><a href="#projects" style="font-size: 1.1rem; font-weight: 600;">Projects</a></li>
+                <li style="margin-bottom: 0.8rem;"><a href="#research" style="font-size: 1.1rem; font-weight: 600;">Research</a></li>
+                <li style="margin-bottom: 0.8rem;"><a href="#education" style="font-size: 1.1rem; font-weight: 600;">Education</a></li>
+                <li style="margin-bottom: 0.8rem;"><a href="#certifications" style="font-size: 1.1rem; font-weight: 600;">Certifications</a></li>
+            </ul>
+        </nav>
     </aside>
 
     <main>
@@ -532,6 +543,39 @@
                         <span class="tech-stack-tag">Computer Vision</span>
                         <span class="tech-stack-tag">Siamese Networks</span>
                         <span class="tech-stack-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: Vehicle Parking -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject(this)">
+                    <div class="project-title-group">
+                        <h3>Vehicle Parking Management System</h3>
+                        <p class="project-subtitle">Full-stack production ecosystem with Docker & Redis</p>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="project-details">
+                    <div class="project-section-title">Overview</div>
+                    <p>Designed a production-grade full-stack parking ecosystem using Vue.js components, Flask Blueprints, and service layer pattern, deployed via Docker Compose multi-container orchestration.</p>
+
+                    <div class="project-section-title">Key Features</div>
+                    <ul>
+                        <li><strong>Production Architecture:</strong> Implemented JWT authentication with RBAC and a Redis caching layer to minimize database latency.</li>
+                        <li><strong>Asynchronous Processing:</strong> Integrated Celery workers backed by Redis for asynchronous CSV exports and PDF generation with ReportLab.</li>
+                        <li><strong>Automated Reporting:</strong> Scheduled using Celery Beat for automated monthly reports.</li>
+                        <li><strong>High Performance:</strong> Configured Gunicorn process manager with Uvicorn ASGI workers for high-performance production deployment.</li>
+                    </ul>
+
+                    <div class="project-section-title">Technologies</div>
+                    <div>
+                        <span class="tech-stack-tag">Flask</span>
+                        <span class="tech-stack-tag">Vue.js</span>
+                        <span class="tech-stack-tag">Redis</span>
+                        <span class="tech-stack-tag">Celery</span>
+                        <span class="tech-stack-tag">Docker</span>
+                        <span class="tech-stack-tag">Gunicorn</span>
                     </div>
                 </div>
             </div>
