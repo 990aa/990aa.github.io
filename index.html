@@ -1221,6 +1221,40 @@ footer {
             </div>
         </div>
 
+        <div class="project-card" data-categories="full-stack">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>FacultySync: University Schedule &amp; Conflict Manager</h3>
+                    <p class="project-subtitle">Java, JavaFX, SQLite, Gradle, JUnit</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <div class="project-links">
+                    <a href="https://github.com/990aa/facultysync" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="project-section-title">Overview</div>
+                <p>Built a modern JavaFX desktop platform for university scheduling, room-conflict detection, and automated conflict resolution with native Windows integration.</p>
+
+                <div class="project-section-title">Key Features</div>
+                <ul>
+                    <li>Implemented schedule import/export, conflict detection, and auto-resolution using an IntervalTree-based conflict engine and a backtracking resolver that reassigns events while ensuring no new overlaps are introduced.</li>
+                    <li>Engineered a custom undecorated JavaFX interface with native-feel window controls, weekly drag-and-drop calendar, multi-tab dashboard, analytics charts, and animated toast notifications.</li>
+                    <li>Integrated SQLite persistence (WAL mode, foreign keys, indexed overlap queries), GitHub Releases auto-update checks, background-threaded JavaFX tasks for non-blocking I/O, and comprehensive automated test coverage across model, DB, algorithms, and I/O layers.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">Java 25</span>
+                    <span class="tech-stack-tag">JavaFX</span>
+                    <span class="tech-stack-tag">SQLite</span>
+                    <span class="tech-stack-tag">Gradle</span>
+                    <span class="tech-stack-tag">JUnit 5</span>
+                    <span class="tech-stack-tag">SystemTray</span>
+                </div>
+            </div>
+        </div>
+
         
         <div class="project-card" data-categories="ml-cv">
             <div class="project-header" onclick="toggleProject(this)">
@@ -1254,6 +1288,40 @@ footer {
                     <span class="tech-stack-tag">MediaPipe</span>
                     <span class="tech-stack-tag">OpenCV</span>
                     <span class="tech-stack-tag">NumPy</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card" data-categories="ml-cv data-science">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>IsoFace: CPU-Optimized Face Clustering</h3>
+                    <p class="project-subtitle">Python, ONNX Runtime, ArcFace, DBSCAN, OpenCV</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <div class="project-links">
+                    <a href="https://github.com/990aa/isoface" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="project-section-title">Overview</div>
+                <p>Developed a fully local face-clustering pipeline that groups photos by person using ArcFace embeddings and DBSCAN, optimized for CPU-only systems.</p>
+
+                <div class="project-section-title">Key Features</div>
+                <ul>
+                    <li>Built a three-stage inference pipeline with RetinaFace detection, ArcFace 512-dimensional embeddings, and DBSCAN clustering to automatically discover identities without predefined class counts.</li>
+                    <li>Optimized runtime with ONNX Runtime for CPU inference, delivering practical throughput while preserving high clustering quality via the buffalo_l model stack.</li>
+                    <li>Implemented automatic photo organization, configurable CLI tuning (`eps`, `min_samples`), dataset and custom-folder workflows, and an API layer for programmatic clustering and statistics retrieval.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">Python</span>
+                    <span class="tech-stack-tag">InsightFace</span>
+                    <span class="tech-stack-tag">ONNX Runtime</span>
+                    <span class="tech-stack-tag">DBSCAN</span>
+                    <span class="tech-stack-tag">scikit-learn</span>
+                    <span class="tech-stack-tag">OpenCV</span>
                 </div>
             </div>
         </div>

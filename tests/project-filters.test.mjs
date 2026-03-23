@@ -32,7 +32,7 @@ const categoryButtons = Array.from(document.querySelectorAll('.project-category-
 const allCards = Array.from(document.querySelectorAll('#projects .project-card'));
 
 assert.equal(categoryButtons.length, 5, 'Expected 5 project category buttons');
-assert.ok(allCards.length >= 11, 'Expected project cards to be present');
+assert.ok(allCards.length >= 13, 'Expected project cards to be present');
 
 function visibleTitles() {
     return allCards
@@ -61,6 +61,8 @@ const expectedBest = [
 
 assert.equal(activeCategoryLabel(), 'Best Projects', 'Best Projects should be active by default');
 assert.deepEqual(visibleTitles(), expectedBest, 'Best Projects list does not match expected projects');
+assert.ok(!visibleTitles().includes('FacultySync: University Schedule & Conflict Manager'), 'FacultySync must not be in Best Projects');
+assert.ok(!visibleTitles().includes('IsoFace: CPU-Optimized Face Clustering'), 'IsoFace must not be in Best Projects');
 
 clickCategory('AI & LLM Systems');
 const aiTitles = visibleTitles();
@@ -73,16 +75,19 @@ const mlTitles = visibleTitles();
 assert.ok(mlTitles.includes('Signature Verification System with Explainable AI'), 'Signature Verification should appear in ML/CV');
 assert.ok(mlTitles.includes('Real-Time Hand Gesture Recognition System'), 'Hand Gesture should appear in ML/CV');
 assert.ok(mlTitles.includes('Hybrid Image Classification: SVM with Deep Feature Extraction'), 'Hybrid Image Classification should appear in ML/CV');
+assert.ok(mlTitles.includes('IsoFace: CPU-Optimized Face Clustering'), 'IsoFace should appear in ML/CV');
 
 clickCategory('Full-Stack Platforms');
 const fullStackTitles = visibleTitles();
 assert.ok(fullStackTitles.includes('Hospital Operations System'), 'Hospital Operations should appear in Full-Stack');
 assert.ok(fullStackTitles.includes('Vehicle Parking Management System'), 'Vehicle Parking should appear in Full-Stack');
+assert.ok(fullStackTitles.includes('FacultySync: University Schedule & Conflict Manager'), 'FacultySync should appear in Full-Stack');
 
 clickCategory('Data Science & Analytics');
 const dataTitles = visibleTitles();
 assert.ok(dataTitles.includes('Unsupervised Cipher Cracking'), 'Unsupervised Cipher Cracking should appear in Data Science');
 assert.ok(dataTitles.includes('Interactive Customer Segmentation & Analytics Engine'), 'Customer Segmentation should appear in Data Science');
+assert.ok(dataTitles.includes('IsoFace: CPU-Optimized Face Clustering'), 'IsoFace should appear in Data Science');
 
 clickCategory('Best Projects');
 const bestVisibleCards = allCards.filter((card) => !card.classList.contains('is-hidden'));
