@@ -12,6 +12,22 @@ function toggleProject(header: HTMLElement): void {
     }
 }
 
+function setProjectCategory(category: string): void {
+    projectCategoryButtons.forEach((button) => {
+        button.classList.toggle('active', button.dataset.projectCategory === category);
+    });
+
+    projectCards.forEach((card) => {
+        const categories = (card.dataset.categories ?? '').split(/\s+/).filter(Boolean);
+        const visible = categories.includes(category);
+
+        card.classList.toggle('is-hidden', !visible);
+        if (!visible) {
+            card.classList.remove('active');
+        }
+    });
+}
+
 function toggleResearch(header: HTMLElement): void {
     const card = header.closest('.research-card') as HTMLElement | null;
     if (!card) {
@@ -28,6 +44,8 @@ function toggleResearch(header: HTMLElement): void {
 
 const sections = document.querySelectorAll<HTMLElement>('main section[id]');
 const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
+const projectCards = document.querySelectorAll<HTMLElement>('#projects .project-card');
+const projectCategoryButtons = document.querySelectorAll<HTMLButtonElement>('.project-category-btn');
 
 function onScroll(): void {
     let current = '';
@@ -46,6 +64,17 @@ function onScroll(): void {
 
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
+
+projectCategoryButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const category = button.dataset.projectCategory;
+        if (category) {
+            setProjectCategory(category);
+        }
+    });
+});
+
+setProjectCategory('best-projects');
 
 const hamburger = document.getElementById('hamburgerBtn') as HTMLButtonElement | null;
 const sidebar = document.getElementById('sidebar') as HTMLElement | null;

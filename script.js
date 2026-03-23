@@ -12,6 +12,22 @@ function toggleProject(header) {
     }
 }
 
+function setProjectCategory(category) {
+    projectCategoryButtons.forEach((button) => {
+        button.classList.toggle('active', button.dataset.projectCategory === category);
+    });
+
+    projectCards.forEach((card) => {
+        const categories = (card.dataset.categories ?? '').split(/\s+/).filter(Boolean);
+        const visible = categories.includes(category);
+
+        card.classList.toggle('is-hidden', !visible);
+        if (!visible) {
+            card.classList.remove('active');
+        }
+    });
+}
+
 function toggleResearch(header) {
     const card = header.closest('.research-card');
     if (!card) {
@@ -28,6 +44,8 @@ function toggleResearch(header) {
 
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
+const projectCards = document.querySelectorAll('#projects .project-card');
+const projectCategoryButtons = document.querySelectorAll('.project-category-btn');
 
 function onScroll() {
     let current = '';
@@ -46,6 +64,17 @@ function onScroll() {
 
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
+
+projectCategoryButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const category = button.dataset.projectCategory;
+        if (category) {
+            setProjectCategory(category);
+        }
+    });
+});
+
+setProjectCategory('best-projects');
 
 const hamburger = document.getElementById('hamburgerBtn');
 const sidebar = document.getElementById('sidebar');

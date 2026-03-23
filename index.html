@@ -382,6 +382,38 @@ h2::after {
     vertical-align: middle;
 }
 
+.project-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 1.15rem;
+}
+
+.project-category-btn {
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.project-category-btn:hover {
+    color: var(--heading);
+    border-color: var(--accent);
+}
+
+.project-category-btn.active {
+    color: var(--accent);
+    background: var(--accent-light);
+    border-color: #C7D2FE;
+    font-weight: 600;
+}
+
 .project-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -447,6 +479,10 @@ h2::after {
     max-height: 2000px;
     padding-bottom: 1.2rem;
     border-top-color: var(--border);
+}
+
+.project-card.is-hidden {
+    display: none;
 }
 
 .project-links {
@@ -931,8 +967,16 @@ footer {
     <section id="projects">
         <h2>Projects</h2>
 
+        <div class="project-categories" aria-label="Project categories">
+            <button class="project-category-btn active" data-project-category="best-projects" type="button">Best Projects</button>
+            <button class="project-category-btn" data-project-category="ai-llm" type="button">AI &amp; LLM Systems</button>
+            <button class="project-category-btn" data-project-category="ml-cv" type="button">Machine Learning &amp; Computer Vision</button>
+            <button class="project-category-btn" data-project-category="full-stack" type="button">Full-Stack Platforms</button>
+            <button class="project-category-btn" data-project-category="data-science" type="button">Data Science &amp; Analytics</button>
+        </div>
+
         
-        <div class="project-card">
+        <div class="project-card" data-categories="best-projects ai-llm full-stack">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Kivixa Productivity Workspace</h3>
@@ -971,7 +1015,7 @@ footer {
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-categories="best-projects data-science">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Unsupervised Cipher Cracking</h3>
@@ -1004,7 +1048,7 @@ footer {
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-categories="best-projects full-stack">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Hospital Operations System</h3>
@@ -1038,7 +1082,7 @@ footer {
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-categories="best-projects ai-llm full-stack">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Phantom Local AI Overlay Assistant</h3>
@@ -1075,10 +1119,10 @@ footer {
         </div>
 
         
-        <div class="project-card">
+        <div class="project-card" data-categories="best-projects ai-llm">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
-                    <h3>NovelCrafter: Incremental Literary Fine-Tuning</h3>
+                    <h3>NovelCrafter: Fine-Tuned Literary LLM</h3>
                     <p class="project-subtitle">Automated sequential LoRA fine-tuning framework</p>
                 </div>
                 <span class="toggle-icon">▼</span>
@@ -1112,7 +1156,7 @@ footer {
         </div>
 
         
-        <div class="project-card">
+        <div class="project-card" data-categories="ml-cv">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Signature Verification System with Explainable AI</h3>
@@ -1145,7 +1189,7 @@ footer {
         </div>
 
         
-        <div class="project-card">
+        <div class="project-card" data-categories="full-stack">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Vehicle Parking Management System</h3>
@@ -1178,7 +1222,7 @@ footer {
         </div>
 
         
-        <div class="project-card">
+        <div class="project-card" data-categories="ml-cv">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Real-Time Hand Gesture Recognition System</h3>
@@ -1215,7 +1259,7 @@ footer {
         </div>
 
         
-        <div class="project-card">
+        <div class="project-card" data-categories="ml-cv">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Hybrid Image Classification: SVM with Deep Feature Extraction</h3>
@@ -1252,7 +1296,7 @@ footer {
         </div>
 
         
-        <div class="project-card">
+        <div class="project-card" data-categories="data-science">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Interactive Customer Segmentation &amp; Analytics Engine</h3>
@@ -1286,7 +1330,7 @@ footer {
         </div>
 
         
-        <div class="project-card">
+        <div class="project-card" data-categories="data-science ml-cv">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Advanced House Price Prediction System</h3>
@@ -1491,3 +1535,4 @@ footer {
 
 </body>
 </html>
+
