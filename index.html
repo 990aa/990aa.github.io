@@ -935,8 +935,8 @@ footer {
         <div class="project-card">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
-                    <h3>Kivixa: Intelligent Research &amp; Productivity Workspace</h3>
-                    <p class="project-subtitle">Cross-platform productivity environment with local AI inference</p>
+                    <h3>Kivixa Productivity Workspace</h3>
+                    <p class="project-subtitle">Flutter, Dart, Rust, llama.cpp</p>
                 </div>
                 <span class="toggle-icon">▼</span>
             </div>
@@ -945,25 +945,131 @@ footer {
                     <a href="https://github.com/990aa/kivixa" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
                 </div>
                 <div class="project-section-title">Overview</div>
-                <p>Built to bridge fluid user interfaces and local AI inference, running natively on Windows and Android without cloud APIs — Phi-4 entirely on-device.</p>
+                <p>Architected a privacy-first, cross-platform productivity system with a Rust-native AI engine supporting multi-model SLM inference while running fully offline.</p>
 
                 <div class="project-section-title">Key Features</div>
                 <ul>
-                    <li><strong>Local AI:</strong> On-device LLM inference (Phi-4) via a custom Rust interface to llama.cpp with hardware acceleration.</li>
-                    <li><strong>Knowledge Graph:</strong> Rust-powered dynamic linking of notes and concepts.</li>
-                    <li><strong>PDF &amp; Annotation:</strong> Professional-grade PDF tools with layer-based annotation.</li>
-                    <li><strong>Cross-Platform FFI:</strong> Robust bridge between Dart (Flutter) and Rust for heavy computation.</li>
-                    <li><strong>Scripting:</strong> Integrated Lua scripting for user automation.</li>
+                    <li>Architected a privacy-first, cross-platform productivity system with a Rust-native AI engine supporting multi-model SLM inference (Phi-4, Qwen 3.5, Gemma) with automatic task-based model routing, GPU acceleration via Vulkan/Metal, and a full Model Context Protocol (MCP) implementation for sandboxed AI-driven file operations — all fully offline.</li>
+                    <li>Built a Rust-backed audio intelligence pipeline integrating Whisper STT with real-time word-level timestamps, Kokoro neural TTS, voice activity detection, and semantic audio indexing; alongside a vector database with local embeddings for semantic search and automatic note clustering.</li>
+                    <li>Engineered version control using SHA-256 content-addressable blob storage with automatic snapshots, a Lua-scriptable plugin system with a full programmatic notes API, an interactive knowledge graph with force-directed simulation, and a split-screen editor supporting handwritten, markdown, and PDF formats.</li>
                 </ul>
 
                 <div class="project-section-title">Technologies</div>
                 <div>
-                    <span class="tech-stack-tag">Flutter (Dart)</span>
+                    <span class="tech-stack-tag">Flutter</span>
+                    <span class="tech-stack-tag">Dart</span>
                     <span class="tech-stack-tag">Rust</span>
-                    <span class="tech-stack-tag">C++ (llama.cpp)</span>
-                    <span class="tech-stack-tag">CMake</span>
+                    <span class="tech-stack-tag">llama.cpp</span>
                     <span class="tech-stack-tag">Phi-4</span>
+                    <span class="tech-stack-tag">Qwen 3.5</span>
+                    <span class="tech-stack-tag">Gemma</span>
+                    <span class="tech-stack-tag">MCP</span>
+                    <span class="tech-stack-tag">Whisper</span>
+                    <span class="tech-stack-tag">Kokoro</span>
                     <span class="tech-stack-tag">Lua</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>Unsupervised Cipher Cracking</h3>
+                    <p class="project-subtitle">Python, NumPy, MCMC, HMM, Genetic Algorithms</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <div class="project-links">
+                    <a href="https://github.com/990aa/uncipher" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="project-section-title">Overview</div>
+                <p>Built an unsupervised cryptanalysis toolkit with multiple solvers and shared language modeling for robust ciphertext recovery across families.</p>
+
+                <div class="project-section-title">Key Features</div>
+                <ul>
+                    <li>Implemented three independent solvers — Metropolis-Hastings MCMC with simulated annealing, Baum-Welch HMM/EM, and a tournament-selection genetic algorithm — over a shared quadgram language model trained on 6M+ characters, with vectorised NumPy decryption in the hot loop achieving ~100k scores/second.</li>
+                    <li>Built a statistical cipher-type detector using Index of Coincidence, Kasiski examination, entropy, and bigram repeat rate; and a phase-transition analyser that empirically maps minimum ciphertext length against decryption success rate, directly connecting to the theoretical unicity distance.</li>
+                    <li>Designed a benchmarking and convergence diagnostics framework comparing all three solvers on identical test cases across five cipher families, with multi-chain consensus key reconstruction, per-letter confidence scoring, and publication-quality diagnostic plots.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">Python</span>
+                    <span class="tech-stack-tag">NumPy</span>
+                    <span class="tech-stack-tag">MCMC</span>
+                    <span class="tech-stack-tag">HMM</span>
+                    <span class="tech-stack-tag">Genetic Algorithms</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>Hospital Operations System</h3>
+                    <p class="project-subtitle">Flask, Vue.js, Celery, Redis, Docker</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <div class="project-links">
+                    <a href="https://github.com/990aa/hospital-operations-system" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="project-section-title">Overview</div>
+                <p>Developed a production-ready healthcare operations platform spanning hospital workflows and blood bank management with secure role separation.</p>
+
+                <div class="project-section-title">Key Features</div>
+                <ul>
+                    <li>Built a role-separated web platform across two integrated runtime modules — hospital operations and blood bank management — behind a shared Flask-Security authentication layer with four distinct RBAC roles, deployed via Docker Compose with Gunicorn, tini for correct PID handling, and a non-root production runtime.</li>
+                    <li>Engineered a blood bank allocation engine using SQL triggers, compatibility-based matching logic, and predictive shortage alerting with a full forensic audit trail; donor workflows support whole blood and component-split donations with inventory state tracked across requests.</li>
+                    <li>Implemented async task infrastructure with Celery workers and Beat scheduling for automated appointment reminders, monthly doctor activity reports, and CSV exports via PyMuPDF and Pandas — all brokered through Redis with a separate caching layer to minimise database hits.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">Flask</span>
+                    <span class="tech-stack-tag">Vue.js</span>
+                    <span class="tech-stack-tag">Celery</span>
+                    <span class="tech-stack-tag">Redis</span>
+                    <span class="tech-stack-tag">Docker</span>
+                    <span class="tech-stack-tag">Gunicorn</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>Phantom Local AI Overlay Assistant</h3>
+                    <p class="project-subtitle">Rust, Python, TypeScript, Dart, Kotlin</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <div class="project-links">
+                    <a href="https://github.com/990aa/phantom" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="project-section-title">Overview</div>
+                <p>Implemented a lightweight cross-platform local AI assistant with desktop and Android runtimes focused on low-latency contextual help.</p>
+
+                <div class="project-section-title">Key Features</div>
+                <ul>
+                    <li>Built a cross-platform AI assistant that idles at under 15 MB RAM using a multi-process architecture — a Rust watcher handling OS-level hotkeys, UIAutomation context extraction, and IPC via Named Pipes, with a Python inference engine loading GGUF models on-demand via llama-cpp and a Tauri/React floating overlay as the UI.</li>
+                    <li>Implemented an Android counterpart in Flutter and Kotlin using an Accessibility Service for active-window context traversal and a native llama.cpp bridge for on-device inference, distributed as F-Droid-compatible APKs alongside a Windows WinGet package.</li>
+                    <li>Designed a style distillation system that automatically extracts personalised writing rulebooks from outgoing message history, applied at inference time to mirror the user's tone without fine-tuning.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">Rust</span>
+                    <span class="tech-stack-tag">Python</span>
+                    <span class="tech-stack-tag">TypeScript</span>
+                    <span class="tech-stack-tag">Dart</span>
+                    <span class="tech-stack-tag">Kotlin</span>
+                    <span class="tech-stack-tag">llama.cpp</span>
+                    <span class="tech-stack-tag">Tauri</span>
+                    <span class="tech-stack-tag">Flutter</span>
                 </div>
             </div>
         </div>
