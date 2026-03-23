@@ -12,7 +12,8 @@ const scriptRaw = fs.readFileSync(scriptPath, 'utf8');
 
 const sanitizedHtml = htmlRaw
     .replace(/<script src="https:\/\/cdn\.tailwindcss\.com"><\/script>/g, '')
-    .replace(/<script>\s*tailwind\.config[\s\S]*?<\/script>/g, '');
+    .replace(/<script>\s*tailwind\.config[\s\S]*?<\/script>/g, '')
+    .replace(/<script src="script\.js" defer><\/script>/g, '');
 
 const dom = new JSDOM(sanitizedHtml, {
     url: 'http://localhost/',
