@@ -796,18 +796,11 @@ footer {
         <a href="https://www.linkedin.com/in/01ahad/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
 
-    
-    <a href="assets/cv.pdf" download class="resume-btn">
-        <i class="fas fa-download"></i> Download CV
-    </a>
-
-    
     <nav class="sidebar-nav">
         <ul>
             <li><a href="#about"    class="nav-link active"><i class="fas fa-user"></i> About</a></li>
             <li><a href="#skills"   class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
             <li><a href="#projects" class="nav-link"><i class="fas fa-folder"></i> Projects</a></li>
-            <li><a href="#research" class="nav-link"><i class="fas fa-flask"></i> Research</a></li>
             <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
             <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a></li>
         </ul>
@@ -1433,98 +1426,6 @@ footer {
 
     </section>
 
-    
-    <!-- ── RESEARCH ───────────────────────────────── -->
-    <section id="research">
-        <h2>Research &amp; Working Papers</h2>
-
-        
-
-        
-        <div class="research-card">
-            <div class="research-header" onclick="toggleResearch(this)">
-                <div>
-                    <div class="research-title">Fair Spectral Topology</div>
-                    <div class="research-subtitle">Bridging Graph Theory, Optimisation, and Algorithmic Fairness</div>
-                </div>
-                <div class="research-header-right">
-                    <span class="status-badge status-review">Under Review</span>
-                    <span class="toggle-icon">▼</span>
-                </div>
-            </div>
-
-            <div class="research-details">
-
-            <div class="research-section-title">Abstract</div>
-            <p>Addresses the tension between geometric accuracy and demographic parity in unsupervised learning. Fairness constraints are incorporated directly into the graph topology construction phase, forcing Laplacian eigenvectors to encode cross-group structures — eliminating the need for post-hoc corrections.</p>
-
-            <div class="research-section-title">Key Contributions</div>
-            <ul>
-                <li><strong>Topological Intervention:</strong> Fairness-aware k-NN algorithm balancing same-group and cross-group neighbours via a fairness strength parameter α.</li>
-                <li><strong>Mathematical Framework:</strong> Connects graph theory (similarity graphs), optimisation (spectral relaxation), and algorithmic fairness (disparate impact).</li>
-                <li><strong>Computational Efficiency:</strong> Sparse formulation + Lanczos algorithm achieving near-linear complexity, suitable for large-scale datasets.</li>
-                <li><strong>Empirical Validation:</strong> Disparate impact ratios near 1.0 on synthetic benchmarks while maintaining high clustering quality.</li>
-            </ul>
-            </div>
-        </div>
-
-        
-        <div class="research-card">
-            <div class="research-header" onclick="toggleResearch(this)">
-                <div>
-                    <div class="research-title">Zero-Cost Decision Systems</div>
-                    <div class="research-subtitle">Dynamic Programming vs Reinforcement Learning for Sequential Decision Making</div>
-                </div>
-                <div class="research-header-right">
-                    <span class="status-badge status-wip">Working Paper</span>
-                    <span class="toggle-icon">▼</span>
-                </div>
-            </div>
-
-            <div class="research-details">
-
-            <div class="research-section-title">Abstract</div>
-            <p>Explores the "From Omniscience to Experience" narrative, positioning heuristic search, dynamic programming, and RL on a spectrum of required environmental knowledge. Establishes a formal theoretical relationship between Bellman optimality equations and temporal difference updates, demonstrating how model-free learning approximates model-based computation.</p>
-
-            <div class="research-section-title">Key Contributions</div>
-            <ul>
-                <li><strong>High-Performance Architecture:</strong> Implemented in Rust with trait-based polymorphism — unified benchmarking suite for A*, Value Iteration, and Q-Learning.</li>
-                <li><strong>Memory Optimisations:</strong> Double-buffered value function for zero-allocation DP iterations; cache-friendly Q-table achieving a 5× memory reduction vs standard hash-based implementations.</li>
-                <li><strong>Stochastic Analysis:</strong> Benchmarked in deterministic and stochastic grid-world environments, quantifying trade-offs between sample complexity and optimality guarantees.</li>
-            </ul>
-            </div>
-        </div>
-
-        
-        <div class="research-card">
-            <div class="research-header" onclick="toggleResearch(this)">
-                <div>
-                    <div class="research-title">Riemannian Spectral Dynamics</div>
-                    <div class="research-subtitle">A Unified Framework for Understanding Neural Network Optimisation</div>
-                </div>
-                <div class="research-header-right">
-                    <span class="status-badge status-wip">Working Paper</span>
-                    <span class="toggle-icon">▼</span>
-                </div>
-            </div>
-
-            <div class="research-details">
-
-            <div class="research-section-title">Abstract</div>
-            <p>Develops a coherent theoretical framework built on differential geometry, spectral theory, and matrix decompositions to understand neural network training dynamics. Reframes parameter space as a Riemannian manifold, providing insights into why methods like Natural Gradient Descent are invariant to reparameterisation.</p>
-
-            <div class="research-section-title">Key Contributions</div>
-            <ul>
-                <li><strong>Geometric Perspective:</strong> Formulates the Fisher Information Matrix as the natural metric tensor of the statistical manifold, connecting it to the expected Hessian.</li>
-                <li><strong>Spectral Analysis:</strong> Local geometry near critical points via eigenvalue decomposition of the Hessian; derives stability conditions based on spectral radius.</li>
-                <li><strong>Structural Dynamics:</strong> SVD-based tracking of the "low-rank bias" phenomenon — weight matrices concentrating energy into top singular modes as an implicit regulariser.</li>
-                <li><strong>Loss Landscape:</strong> Experimental validation computing Hessian spectral density at local minima to distinguish flat vs sharp minima.</li>
-            </ul>
-            </div>
-        </div>
-    </section>
-
-    
     <!-- ── EDUCATION ──────────────────────────────── -->
     <section id="education">
         <h2>Education</h2>

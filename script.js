@@ -28,20 +28,6 @@ function setProjectCategory(category) {
     });
 }
 
-function toggleResearch(header) {
-    const card = header.closest('.research-card');
-    if (!card) {
-        return;
-    }
-
-    const isActive = card.classList.contains('active');
-    document.querySelectorAll('.research-card.active').forEach((c) => c.classList.remove('active'));
-
-    if (!isActive) {
-        card.classList.add('active');
-    }
-}
-
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 const projectCards = document.querySelectorAll('#projects .project-card');
@@ -117,4 +103,3 @@ navLinks.forEach((link) => {
 });
 
 window.toggleProject = toggleProject;
-window.toggleResearch = toggleResearch;
