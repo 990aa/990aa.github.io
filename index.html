@@ -83,17 +83,6 @@ aside {
     z-index: 100;
 }
 
-.profile-photo {
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--card-bg);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-    margin-bottom: 1.1rem;
-    display: block;
-}
-
 .sidebar-name {
     font-family: 'Instrument Serif', serif;
     font-size: 1.65rem;
@@ -144,6 +133,13 @@ aside {
     transform: translateY(-2px);
 }
 
+.resume-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 2rem;
+}
+
 .resume-btn {
     display: flex;
     align-items: center;
@@ -155,7 +151,7 @@ aside {
     padding: 0.55rem 1rem;
     border-radius: var(--radius);
     transition: background 0.2s, transform 0.15s;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     width: fit-content;
     letter-spacing: 0.01em;
 }
@@ -683,9 +679,6 @@ footer {
 
 
 <aside id="sidebar">
-    
-    <img src="assets/pfp.png" alt="Abdul Ahad" class="profile-photo">
-
     <p class="sidebar-name">Abdul Ahad</p>
     <p class="sidebar-tagline">Researcher &amp; Developer<br>Deep Learning · Data Science · Cross-Platform Applications</p>
 
@@ -700,10 +693,14 @@ footer {
         <a href="https://www.linkedin.com/in/01ahad/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
 
-    
-    <a href="assets/cv.pdf" download class="resume-btn">
-        <i class="fas fa-download"></i> Download CV
-    </a>
+    <div class="resume-actions">
+        <a href="assets/Abdul%20Ahad%20CV%20SWE.pdf" download class="resume-btn">
+            <i class="fas fa-download"></i> Download CV (SSWE)
+        </a>
+        <a href="assets/Abdul%20Ahad%20CV%20AIML.pdf" download class="resume-btn">
+            <i class="fas fa-download"></i> Download CV (AI/ML)
+        </a>
+    </div>
 
     
     <nav class="sidebar-nav">
@@ -753,10 +750,6 @@ footer {
                         <span class="tag core">SQL</span>
                         <span class="tag">Java</span>
                         <span class="tag">C</span>
-                        <span class="tag">C++</span>
-                        <span class="tag">Go</span>
-                        <span class="tag">PowerShell</span>
-                        <span class="tag">Bash</span>
                     </td>
                 </tr>
                 <tr>
@@ -789,8 +782,6 @@ footer {
                         <span class="tag core">Ollama</span>
                         <span class="tag core">Vector DBs</span>
                         <span class="tag">LangGraph</span>
-                        <span class="tag">CrewAI</span>
-                        <span class="tag">AutoGen</span>
                         <span class="tag">vLLM</span>
                     </td>
                 </tr>
@@ -820,6 +811,7 @@ footer {
                         <span class="tag">MLFlow</span>
                         <span class="tag">AzureML</span>
                         <span class="tag">Gunicorn</span>
+                        <span class="tag">Uvicorn</span>
                         <span class="tag">Vercel</span>
                     </td>
                 </tr>
@@ -829,8 +821,6 @@ footer {
                         <span class="tag core">Flutter</span>
                         <span class="tag core">Next.js</span>
                         <span class="tag core">Tauri</span>
-                        <span class="tag">Vue.js</span>
-                        <span class="tag">Angular</span>
                         <span class="tag">JavaFX</span>
                     </td>
                 </tr>
@@ -841,17 +831,6 @@ footer {
                         <span class="tag core">OracleDB</span>
                         <span class="tag core">SQLite</span>
                         <span class="tag core">MongoDB</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">Supabase</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="skill-label">Languages spoken</td>
-                    <td class="skill-tags">
-                        <span class="tag">English (C1 · IELTS)</span>
-                        <span class="tag">Hindi (Native)</span>
-                        <span class="tag">French (Elementary)</span>
-                        <span class="tag">Japanese (Elementary)</span>
                     </td>
                 </tr>
             </tbody>
@@ -873,9 +852,9 @@ footer {
             <button class="project-category-btn" data-project-category="ml-cv" type="button">Machine Learning &amp; Computer Vision</button>
             <button class="project-category-btn" data-project-category="full-stack" type="button">Full-Stack Platforms</button>
             <button class="project-category-btn" data-project-category="data-science" type="button">Data Science &amp; Analytics</button>
+            <button class="project-category-btn" data-project-category="older-projects" type="button">Older Projects</button>
         </div>
 
-        
         <div class="project-card" data-categories="best-projects ai-llm full-stack">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
@@ -887,15 +866,16 @@ footer {
             <div class="project-details">
                 <div class="project-links">
                     <a href="https://github.com/990aa/kivixa" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://kivixa.vercel.app/" target="_blank" rel="noopener" title="Landing Page"><i class="fas fa-globe"></i></a>
                 </div>
                 <div class="project-section-title">Overview</div>
-                <p>Architected a privacy-first, cross-platform productivity system with a Rust-native AI engine supporting multi-model SLM inference while running fully offline.</p>
+                <p>Architected an offline, cross-platform workspace distributed via F-Droid and winget, powered by a Rust-native AI engine and local-first design.</p>
 
                 <div class="project-section-title">Key Features</div>
                 <ul>
-                    <li>Architected a privacy-first, cross-platform productivity system with a Rust-native AI engine supporting multi-model SLM inference (Phi-4, Qwen 3.5, Gemma) with automatic task-based model routing, GPU acceleration via Vulkan/Metal, and a full Model Context Protocol (MCP) implementation for sandboxed AI-driven file operations — all fully offline.</li>
-                    <li>Built a Rust-backed audio intelligence pipeline integrating Whisper STT with real-time word-level timestamps, Kokoro neural TTS, voice activity detection, and semantic audio indexing; alongside a vector database with local embeddings for semantic search and automatic note clustering.</li>
-                    <li>Engineered version control using SHA-256 content-addressable blob storage with automatic snapshots, a Lua-scriptable plugin system with a full programmatic notes API, an interactive knowledge graph with force-directed simulation, and a split-screen editor supporting handwritten, markdown, and PDF formats.</li>
+                    <li>Architected an offline, cross-platform workspace (distributed via F-Droid and winget) driven by a Rust-native AI engine. Engineered multi-model LLM inference with Vulkan/Metal GPU acceleration and integrated a sandboxed Model Context Protocol (MCP) for secure, autonomous file operations.</li>
+                    <li>Built a Rust-backed audio intelligence pipeline featuring Whisper STT for real-time word-level transcription, Kokoro neural TTS, and voice activity detection; integrated alongside a local vector database for semantic search and a high-performance math engine for multivariable calculus and hypothesis testing.</li>
+                    <li>Implemented Git-like version control utilizing SHA-256 content-addressable blob storage with automatic snapshots. Designed a Lua 5.3 scriptable plugin architecture with a programmatic API, an interactive force-directed knowledge graph, and parallel state-driven orchestration for chained routines.</li>
                 </ul>
 
                 <div class="project-section-title">Technologies</div>
@@ -904,13 +884,10 @@ footer {
                     <span class="tech-stack-tag">Dart</span>
                     <span class="tech-stack-tag">Rust</span>
                     <span class="tech-stack-tag">llama.cpp</span>
-                    <span class="tech-stack-tag">Phi-4</span>
-                    <span class="tech-stack-tag">Qwen 3.5</span>
-                    <span class="tech-stack-tag">Gemma</span>
                     <span class="tech-stack-tag">MCP</span>
                     <span class="tech-stack-tag">Whisper</span>
                     <span class="tech-stack-tag">Kokoro</span>
-                    <span class="tech-stack-tag">Lua</span>
+                    <span class="tech-stack-tag">Lua 5.3</span>
                 </div>
             </div>
         </div>
@@ -932,7 +909,7 @@ footer {
 
                 <div class="project-section-title">Key Features</div>
                 <ul>
-                    <li>Implemented three independent solvers — Metropolis-Hastings MCMC with simulated annealing, Baum-Welch HMM/EM, and a tournament-selection genetic algorithm — over a shared quadgram language model trained on 6M+ characters, with vectorised NumPy decryption in the hot loop achieving ~100k scores/second.</li>
+                    <li>Implemented three independent solvers - Metropolis-Hastings MCMC with simulated annealing, Baum-Welch HMM/EM, and a tournament-selection genetic algorithm - over a shared quadgram language model trained on 6M+ characters, with vectorised NumPy decryption in the hot loop achieving ~100k scores/second.</li>
                     <li>Built a statistical cipher-type detector using Index of Coincidence, Kasiski examination, entropy, and bigram repeat rate; and a phase-transition analyser that empirically maps minimum ciphertext length against decryption success rate, directly connecting to the theoretical unicity distance.</li>
                     <li>Designed a benchmarking and convergence diagnostics framework comparing all three solvers on identical test cases across five cipher families, with multi-chain consensus key reconstruction, per-letter confidence scoring, and publication-quality diagnostic plots.</li>
                 </ul>
@@ -952,7 +929,7 @@ footer {
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Hospital Operations System</h3>
-                    <p class="project-subtitle">Flask, Vue.js, Celery, Redis, Docker</p>
+                    <p class="project-subtitle">Flask, Vue.js, Celery, Redis, Docker, Prometheus</p>
                 </div>
                 <span class="toggle-icon">▼</span>
             </div>
@@ -961,13 +938,13 @@ footer {
                     <a href="https://github.com/990aa/hospital-operations-system" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
                 </div>
                 <div class="project-section-title">Overview</div>
-                <p>Developed a production-ready healthcare operations platform spanning hospital workflows and blood bank management with secure role separation.</p>
+                <p>Architected a dual-module hospital and blood bank platform with secure API design, asynchronous workflows, and production observability.</p>
 
                 <div class="project-section-title">Key Features</div>
                 <ul>
-                    <li>Built a role-separated web platform across two integrated runtime modules — hospital operations and blood bank management — behind a shared Flask-Security authentication layer with four distinct RBAC roles, deployed via Docker Compose with Gunicorn, tini for correct PID handling, and a non-root production runtime.</li>
-                    <li>Engineered a blood bank allocation engine using SQL triggers, compatibility-based matching logic, and predictive shortage alerting with a full forensic audit trail; donor workflows support whole blood and component-split donations with inventory state tracked across requests.</li>
-                    <li>Implemented async task infrastructure with Celery workers and Beat scheduling for automated appointment reminders, monthly doctor activity reports, and CSV exports via PyMuPDF and Pandas — all brokered through Redis with a separate caching layer to minimise database hits.</li>
+                    <li>Architected a dual-module hospital and blood bank platform deployed via Docker Compose with a non-root Gunicorn/tini runtime. Secured the API with dual Session/JWT authentication, Argon2 hashing, and strict validation (Pydantic v2, Flask-Limiter, Talisman CSP).</li>
+                    <li>Engineered a SQL-heavy allocation engine with trigger-backed forensic auditing and compatibility matching. Implemented a Redis/Celery async pipeline for scheduled workflows and PDF/Pandas CSV exports, supported by SQLite WAL tuning to handle concurrent booking contention.</li>
+                    <li>Integrated production-grade observability featuring structured JSON logging (structlog) with cross-request X-Request-ID tracing, RFC 7807 error contracts, dependency health probes, and custom Prometheus business metrics visualized in Grafana.</li>
                 </ul>
 
                 <div class="project-section-title">Technologies</div>
@@ -977,7 +954,8 @@ footer {
                     <span class="tech-stack-tag">Celery</span>
                     <span class="tech-stack-tag">Redis</span>
                     <span class="tech-stack-tag">Docker</span>
-                    <span class="tech-stack-tag">Gunicorn</span>
+                    <span class="tech-stack-tag">Prometheus</span>
+                    <span class="tech-stack-tag">Grafana</span>
                 </div>
             </div>
         </div>
@@ -999,7 +977,7 @@ footer {
 
                 <div class="project-section-title">Key Features</div>
                 <ul>
-                    <li>Built a cross-platform AI assistant that idles at under 15 MB RAM using a multi-process architecture — a Rust watcher handling OS-level hotkeys, UIAutomation context extraction, and IPC via Named Pipes, with a Python inference engine loading GGUF models on-demand via llama-cpp and a Tauri/React floating overlay as the UI.</li>
+                    <li>Built a cross-platform AI assistant that idles at under 15 MB RAM using a multi-process architecture - a Rust watcher handling OS-level hotkeys, UIAutomation context extraction, and IPC via Named Pipes, with a Python inference engine loading GGUF models on-demand via llama-cpp and a Tauri/React floating overlay as the UI.</li>
                     <li>Implemented an Android counterpart in Flutter and Kotlin using an Accessibility Service for active-window context traversal and a native llama.cpp bridge for on-device inference, distributed as F-Droid-compatible APKs alongside a Windows WinGet package.</li>
                     <li>Designed a style distillation system that automatically extracts personalised writing rulebooks from outgoing message history, applied at inference time to mirror the user's tone without fine-tuning.</li>
                 </ul>
@@ -1018,8 +996,7 @@ footer {
             </div>
         </div>
 
-        
-        <div class="project-card" data-categories="best-projects ai-llm">
+        <div class="project-card" data-categories="ai-llm">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>NovelCrafter: Fine-Tuned Literary LLM</h3>
@@ -1055,73 +1032,43 @@ footer {
             </div>
         </div>
 
-        
         <div class="project-card" data-categories="ml-cv">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
-                    <h3>Signature Verification System with Explainable AI</h3>
-                    <p class="project-subtitle">Siamese Neural Network for offline authentication</p>
+                    <h3>Hybrid Image Classification: SVM with Deep Feature Extraction</h3>
+                    <p class="project-subtitle">Fusing deep learning with classical ML</p>
                 </div>
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="project-details">
                 <div class="project-links">
-                    <a href="https://github.com/990aa/sign-verification" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/990aa/Cat-vs-Dog-SVM" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://huggingface.co/a-01a/dogs-vs-cats-svm" target="_blank" rel="noopener" title="Hugging Face">
+                        <img src="hf-logo.svg" alt="Hugging Face">
+                    </a>
                 </div>
                 <div class="project-section-title">Overview</div>
-                <p>Determines signature authenticity by comparing a query signature against a known reference — entirely offline via metric learning.</p>
+                <p>Hybrid classification pipeline using VGG16 as a frozen feature extractor feeding an SVM classifier - high accuracy under varying computational constraints.</p>
 
                 <div class="project-section-title">Algorithmic Strategy</div>
                 <ul>
-                    <li><strong>Siamese Architecture:</strong> Dual-branch CNN sharing weights to map signatures into a common embedding space.</li>
-                    <li><strong>Metric Learning:</strong> Contrastive / Triplet Loss to minimise distance between genuine pairs and maximise it for forgeries.</li>
-                    <li><strong>Preprocessing Pipeline:</strong> Normalisation, binarisation, and noise reduction for robust feature extraction.</li>
+                    <li><strong>Transfer Learning:</strong> VGG16 as feature extractor producing 512-dim vectors.</li>
+                    <li><strong>Dimensionality Reduction:</strong> PCA compresses to 256 dims retaining 95% variance.</li>
+                    <li><strong>SVM Classifier:</strong> RBF kernel fine-tuned via GridSearchCV.</li>
+                    <li><strong>Custom Serialisation:</strong> Unified persistence for the full pipeline.</li>
                 </ul>
 
                 <div class="project-section-title">Technologies</div>
                 <div>
-                    <span class="tech-stack-tag">Deep Learning</span>
-                    <span class="tech-stack-tag">Computer Vision</span>
-                    <span class="tech-stack-tag">Siamese Networks</span>
-                    <span class="tech-stack-tag">Python</span>
+                    <span class="tech-stack-tag">TensorFlow (VGG16)</span>
+                    <span class="tech-stack-tag">Scikit-learn (SVM, PCA)</span>
+                    <span class="tech-stack-tag">Pandas</span>
+                    <span class="tech-stack-tag">Matplotlib</span>
                 </div>
             </div>
         </div>
 
-        
-        <div class="project-card" data-categories="full-stack">
-            <div class="project-header" onclick="toggleProject(this)">
-                <div class="project-title-group">
-                    <h3>Vehicle Parking Management System</h3>
-                    <p class="project-subtitle">Full-stack production ecosystem with Docker &amp; Redis</p>
-                </div>
-                <span class="toggle-icon">▼</span>
-            </div>
-            <div class="project-details">
-                <div class="project-section-title">Overview</div>
-                <p>Production-grade full-stack parking ecosystem using Vue.js components, Flask Blueprints, and a service-layer pattern, deployed via Docker Compose multi-container orchestration.</p>
-
-                <div class="project-section-title">Key Features</div>
-                <ul>
-                    <li><strong>Auth &amp; RBAC:</strong> JWT authentication with Redis caching to minimise database latency.</li>
-                    <li><strong>Async Processing:</strong> Celery workers for CSV exports and PDF generation with ReportLab.</li>
-                    <li><strong>Automated Reporting:</strong> Celery Beat for scheduled monthly reports.</li>
-                    <li><strong>High Performance:</strong> Gunicorn + Uvicorn ASGI workers for production throughput.</li>
-                </ul>
-
-                <div class="project-section-title">Technologies</div>
-                <div>
-                    <span class="tech-stack-tag">Flask</span>
-                    <span class="tech-stack-tag">Vue.js</span>
-                    <span class="tech-stack-tag">Redis</span>
-                    <span class="tech-stack-tag">Celery</span>
-                    <span class="tech-stack-tag">Docker</span>
-                    <span class="tech-stack-tag">Gunicorn</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card" data-categories="full-stack">
+        <div class="project-card" data-categories="older-projects">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>FacultySync: University Schedule &amp; Conflict Manager</h3>
@@ -1155,8 +1102,73 @@ footer {
             </div>
         </div>
 
-        
-        <div class="project-card" data-categories="ml-cv">
+        <div class="project-card" data-categories="older-projects">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>IsoFace: CPU-Optimized Face Clustering</h3>
+                    <p class="project-subtitle">Python, ONNX Runtime, ArcFace, DBSCAN, OpenCV</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <div class="project-links">
+                    <a href="https://github.com/990aa/isoface" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="project-section-title">Overview</div>
+                <p>Developed a fully local face-clustering pipeline that groups photos by person using ArcFace embeddings and DBSCAN, optimized for CPU-only systems.</p>
+
+                <div class="project-section-title">Key Features</div>
+                <ul>
+                    <li>Built a three-stage inference pipeline with RetinaFace detection, ArcFace 512-dimensional embeddings, and DBSCAN clustering to automatically discover identities without predefined class counts.</li>
+                    <li>Optimized runtime with ONNX Runtime for CPU inference, delivering practical throughput while preserving high clustering quality via the buffalo_l model stack.</li>
+                    <li>Implemented automatic photo organization, configurable CLI tuning (`eps`, `min_samples`), dataset and custom-folder workflows, and an API layer for programmatic clustering and statistics retrieval.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">Python</span>
+                    <span class="tech-stack-tag">InsightFace</span>
+                    <span class="tech-stack-tag">ONNX Runtime</span>
+                    <span class="tech-stack-tag">DBSCAN</span>
+                    <span class="tech-stack-tag">scikit-learn</span>
+                    <span class="tech-stack-tag">OpenCV</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card" data-categories="older-projects">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>Vehicle Parking Management System</h3>
+                    <p class="project-subtitle">Full-stack production ecosystem with Docker &amp; Redis</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <div class="project-section-title">Overview</div>
+                <p>Production-grade full-stack parking ecosystem using Vue.js components, Flask Blueprints, and a service-layer pattern, deployed via Docker Compose multi-container orchestration.</p>
+
+                <div class="project-section-title">Key Features</div>
+                <ul>
+                    <li><strong>Auth &amp; RBAC:</strong> JWT authentication with Redis caching to minimise database latency.</li>
+                    <li><strong>Async Processing:</strong> Celery workers for CSV exports and PDF generation with ReportLab.</li>
+                    <li><strong>Automated Reporting:</strong> Celery Beat for scheduled monthly reports.</li>
+                    <li><strong>High Performance:</strong> Gunicorn + Uvicorn ASGI workers for production throughput.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">Flask</span>
+                    <span class="tech-stack-tag">Vue.js</span>
+                    <span class="tech-stack-tag">Redis</span>
+                    <span class="tech-stack-tag">Celery</span>
+                    <span class="tech-stack-tag">Docker</span>
+                    <span class="tech-stack-tag">Gunicorn</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card" data-categories="older-projects">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Real-Time Hand Gesture Recognition System</h3>
@@ -1192,79 +1204,39 @@ footer {
             </div>
         </div>
 
-        <div class="project-card" data-categories="ml-cv data-science">
+        <div class="project-card" data-categories="older-projects">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
-                    <h3>IsoFace: CPU-Optimized Face Clustering</h3>
-                    <p class="project-subtitle">Python, ONNX Runtime, ArcFace, DBSCAN, OpenCV</p>
+                    <h3>Signature Verification System with Explainable AI</h3>
+                    <p class="project-subtitle">Siamese Neural Network for offline authentication</p>
                 </div>
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="project-details">
                 <div class="project-links">
-                    <a href="https://github.com/990aa/isoface" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/990aa/sign-verification" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
                 </div>
                 <div class="project-section-title">Overview</div>
-                <p>Developed a fully local face-clustering pipeline that groups photos by person using ArcFace embeddings and DBSCAN, optimized for CPU-only systems.</p>
-
-                <div class="project-section-title">Key Features</div>
-                <ul>
-                    <li>Built a three-stage inference pipeline with RetinaFace detection, ArcFace 512-dimensional embeddings, and DBSCAN clustering to automatically discover identities without predefined class counts.</li>
-                    <li>Optimized runtime with ONNX Runtime for CPU inference, delivering practical throughput while preserving high clustering quality via the buffalo_l model stack.</li>
-                    <li>Implemented automatic photo organization, configurable CLI tuning (`eps`, `min_samples`), dataset and custom-folder workflows, and an API layer for programmatic clustering and statistics retrieval.</li>
-                </ul>
-
-                <div class="project-section-title">Technologies</div>
-                <div>
-                    <span class="tech-stack-tag">Python</span>
-                    <span class="tech-stack-tag">InsightFace</span>
-                    <span class="tech-stack-tag">ONNX Runtime</span>
-                    <span class="tech-stack-tag">DBSCAN</span>
-                    <span class="tech-stack-tag">scikit-learn</span>
-                    <span class="tech-stack-tag">OpenCV</span>
-                </div>
-            </div>
-        </div>
-
-        
-        <div class="project-card" data-categories="ml-cv">
-            <div class="project-header" onclick="toggleProject(this)">
-                <div class="project-title-group">
-                    <h3>Hybrid Image Classification: SVM with Deep Feature Extraction</h3>
-                    <p class="project-subtitle">Fusing deep learning with classical ML</p>
-                </div>
-                <span class="toggle-icon">▼</span>
-            </div>
-            <div class="project-details">
-                <div class="project-links">
-                    <a href="https://github.com/990aa/Cat-vs-Dog-SVM" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://huggingface.co/a-01a/dogs-vs-cats-svm" target="_blank" rel="noopener" title="Hugging Face">
-                        <img src="hf-logo.svg" alt="Hugging Face">
-                    </a>
-                </div>
-                <div class="project-section-title">Overview</div>
-                <p>Hybrid classification pipeline using VGG16 as a frozen feature extractor feeding an SVM classifier — high accuracy under varying computational constraints.</p>
+                <p>Determines signature authenticity by comparing a query signature against a known reference - entirely offline via metric learning.</p>
 
                 <div class="project-section-title">Algorithmic Strategy</div>
                 <ul>
-                    <li><strong>Transfer Learning:</strong> VGG16 as feature extractor producing 512-dim vectors.</li>
-                    <li><strong>Dimensionality Reduction:</strong> PCA compresses to 256 dims retaining 95% variance.</li>
-                    <li><strong>SVM Classifier:</strong> RBF kernel fine-tuned via GridSearchCV.</li>
-                    <li><strong>Custom Serialisation:</strong> Unified persistence for the full pipeline.</li>
+                    <li><strong>Siamese Architecture:</strong> Dual-branch CNN sharing weights to map signatures into a common embedding space.</li>
+                    <li><strong>Metric Learning:</strong> Contrastive / Triplet Loss to minimise distance between genuine pairs and maximise it for forgeries.</li>
+                    <li><strong>Preprocessing Pipeline:</strong> Normalisation, binarisation, and noise reduction for robust feature extraction.</li>
                 </ul>
 
                 <div class="project-section-title">Technologies</div>
                 <div>
-                    <span class="tech-stack-tag">TensorFlow (VGG16)</span>
-                    <span class="tech-stack-tag">Scikit-learn (SVM, PCA)</span>
-                    <span class="tech-stack-tag">Pandas</span>
-                    <span class="tech-stack-tag">Matplotlib</span>
+                    <span class="tech-stack-tag">Deep Learning</span>
+                    <span class="tech-stack-tag">Computer Vision</span>
+                    <span class="tech-stack-tag">Siamese Networks</span>
+                    <span class="tech-stack-tag">Python</span>
                 </div>
             </div>
         </div>
 
-        
-        <div class="project-card" data-categories="data-science">
+        <div class="project-card" data-categories="older-projects">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Interactive Customer Segmentation &amp; Analytics Engine</h3>
@@ -1297,8 +1269,7 @@ footer {
             </div>
         </div>
 
-        
-        <div class="project-card" data-categories="data-science ml-cv">
+        <div class="project-card" data-categories="older-projects">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Advanced House Price Prediction System</h3>

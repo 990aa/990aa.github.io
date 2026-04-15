@@ -31,7 +31,7 @@ document.body.appendChild(injected);
 const categoryButtons = Array.from(document.querySelectorAll('.project-category-btn'));
 const allCards = Array.from(document.querySelectorAll('#projects .project-card'));
 
-assert.equal(categoryButtons.length, 5, 'Expected 5 project category buttons');
+assert.equal(categoryButtons.length, 6, 'Expected 6 project category buttons');
 assert.ok(allCards.length >= 13, 'Expected project cards to be present');
 
 function visibleTitles() {
@@ -55,14 +55,14 @@ const expectedBest = [
     'Kivixa Productivity Workspace',
     'Unsupervised Cipher Cracking',
     'Hospital Operations System',
-    'Phantom Local AI Overlay Assistant',
-    'NovelCrafter: Fine-Tuned Literary LLM'
+    'Phantom Local AI Overlay Assistant'
 ];
 
 assert.equal(activeCategoryLabel(), 'Best Projects', 'Best Projects should be active by default');
 assert.deepEqual(visibleTitles(), expectedBest, 'Best Projects list does not match expected projects');
 assert.ok(!visibleTitles().includes('FacultySync: University Schedule & Conflict Manager'), 'FacultySync must not be in Best Projects');
 assert.ok(!visibleTitles().includes('IsoFace: CPU-Optimized Face Clustering'), 'IsoFace must not be in Best Projects');
+assert.ok(!visibleTitles().includes('NovelCrafter: Fine-Tuned Literary LLM'), 'NovelCrafter must not be in Best Projects');
 
 clickCategory('AI & LLM Systems');
 const aiTitles = visibleTitles();
@@ -72,22 +72,36 @@ assert.ok(aiTitles.includes('NovelCrafter: Fine-Tuned Literary LLM'), 'NovelCraf
 
 clickCategory('Machine Learning & Computer Vision');
 const mlTitles = visibleTitles();
-assert.ok(mlTitles.includes('Signature Verification System with Explainable AI'), 'Signature Verification should appear in ML/CV');
-assert.ok(mlTitles.includes('Real-Time Hand Gesture Recognition System'), 'Hand Gesture should appear in ML/CV');
 assert.ok(mlTitles.includes('Hybrid Image Classification: SVM with Deep Feature Extraction'), 'Hybrid Image Classification should appear in ML/CV');
-assert.ok(mlTitles.includes('IsoFace: CPU-Optimized Face Clustering'), 'IsoFace should appear in ML/CV');
+assert.equal(mlTitles.length, 1, 'Only Hybrid Image Classification should appear in ML/CV');
 
 clickCategory('Full-Stack Platforms');
 const fullStackTitles = visibleTitles();
 assert.ok(fullStackTitles.includes('Hospital Operations System'), 'Hospital Operations should appear in Full-Stack');
-assert.ok(fullStackTitles.includes('Vehicle Parking Management System'), 'Vehicle Parking should appear in Full-Stack');
-assert.ok(fullStackTitles.includes('FacultySync: University Schedule & Conflict Manager'), 'FacultySync should appear in Full-Stack');
+assert.ok(fullStackTitles.includes('Kivixa Productivity Workspace'), 'Kivixa should appear in Full-Stack');
+assert.ok(fullStackTitles.includes('Phantom Local AI Overlay Assistant'), 'Phantom should appear in Full-Stack');
+assert.equal(fullStackTitles.length, 3, 'Only Kivixa, Hospital, and Phantom should appear in Full-Stack');
 
 clickCategory('Data Science & Analytics');
 const dataTitles = visibleTitles();
 assert.ok(dataTitles.includes('Unsupervised Cipher Cracking'), 'Unsupervised Cipher Cracking should appear in Data Science');
-assert.ok(dataTitles.includes('Interactive Customer Segmentation & Analytics Engine'), 'Customer Segmentation should appear in Data Science');
-assert.ok(dataTitles.includes('IsoFace: CPU-Optimized Face Clustering'), 'IsoFace should appear in Data Science');
+assert.equal(dataTitles.length, 1, 'Only Unsupervised Cipher Cracking should appear in Data Science');
+
+clickCategory('Older Projects');
+const olderTitles = visibleTitles();
+assert.deepEqual(
+    olderTitles,
+    [
+        'FacultySync: University Schedule & Conflict Manager',
+        'IsoFace: CPU-Optimized Face Clustering',
+        'Vehicle Parking Management System',
+        'Real-Time Hand Gesture Recognition System',
+        'Signature Verification System with Explainable AI',
+        'Interactive Customer Segmentation & Analytics Engine',
+        'Advanced House Price Prediction System'
+    ],
+    'Older Projects order or membership does not match expected list'
+);
 
 clickCategory('Best Projects');
 const bestVisibleCards = allCards.filter((card) => !card.classList.contains('is-hidden'));
@@ -104,6 +118,6 @@ assert.ok(bestVisibleCards[1].classList.contains('active'), 'Second card should 
 
 const sidebarLinks = Array.from(document.querySelectorAll('.sidebar-nav a'));
 assert.ok(sidebarLinks.some((a) => a.getAttribute('href') === '#projects'), 'Projects sidebar link missing');
-assert.ok(sidebarLinks.some((a) => a.getAttribute('href') === '#research'), 'Research sidebar link missing');
+assert.ok(sidebarLinks.some((a) => a.getAttribute('href') === '#certifications'), 'Certifications sidebar link missing');
 
 console.log('All project category and accordion tests passed.');
