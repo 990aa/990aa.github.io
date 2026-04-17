@@ -694,11 +694,8 @@ footer {
     </div>
 
     <div class="resume-actions">
-        <a href="assets/Abdul%20Ahad%20CV%20SWE.pdf" download class="resume-btn">
-            <i class="fas fa-download"></i> Download CV (SSWE)
-        </a>
-        <a href="assets/Abdul%20Ahad%20CV%20AIML.pdf" download class="resume-btn">
-            <i class="fas fa-download"></i> Download CV (AI/ML)
+        <a href="assets/Abdul%20Ahad%20CV%20GENERAL.pdf" download class="resume-btn">
+            <i class="fas fa-download"></i> Download CV
         </a>
     </div>
 
@@ -726,10 +723,10 @@ footer {
                 Currently: 2nd year · MAHE + IITM (dual degree)
             </div>
             <p>
-                I work on deep learning — writing and training models as well as researching open problems in optimisation and algorithmic fairness. That currently covers spectral clustering, fairness constraints in graph-based learning, and loss landscape geometry.
+                I work on deep learning — writing custom models from scratch and researching open problems in continuous mathematical optimization. That currently covers white-box adversarial machine learning, differentiable geometry, and probabilistic search heuristics.
             </p>
             <p>
-                On the software side I build end-to-end applications and ML pipelines — cross-platform and web applications, fine-tuning LLMs for specific tasks, and training pipelines for computer vision and NLP. I work primarily in Python, Dart, and TypeScript, with Rust for performance-critical components.
+                On the software side, I build end-to-end applications and ML pipelines — developing cross-platform software, GPU-accelerated infrastructure, and local AI inference engines. I work primarily in Python and PyTorch, with Rust for memory-safe, performance-critical components.
             </p>
         </div>
     </section>
@@ -852,7 +849,7 @@ footer {
             <button class="project-category-btn" data-project-category="ml-cv" type="button">Machine Learning &amp; Computer Vision</button>
             <button class="project-category-btn" data-project-category="full-stack" type="button">Full-Stack Platforms</button>
             <button class="project-category-btn" data-project-category="data-science" type="button">Data Science &amp; Analytics</button>
-            <button class="project-category-btn" data-project-category="older-projects" type="button">Older Projects</button>
+            <button class="project-category-btn" data-project-category="project-journey" type="button">Project Journey</button>
         </div>
 
         <div class="project-card" data-categories="best-projects ai-llm full-stack">
@@ -892,11 +889,11 @@ footer {
             </div>
         </div>
 
-        <div class="project-card" data-categories="best-projects data-science">
+        <div class="project-card" data-categories="best-projects ml-cv data-science">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
-                    <h3>Unsupervised Cipher Cracking</h3>
-                    <p class="project-subtitle">Python, NumPy, MCMC, HMM, Genetic Algorithms</p>
+                    <h3>Cryptex: Unsupervised Cryptanalysis Engine</h3>
+                    <p class="project-subtitle">Python, NumPy, Numba, MCMC, HMM</p>
                 </div>
                 <span class="toggle-icon">▼</span>
             </div>
@@ -905,22 +902,22 @@ footer {
                     <a href="https://github.com/990aa/uncipher" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
                 </div>
                 <div class="project-section-title">Overview</div>
-                <p>Built an unsupervised cryptanalysis toolkit with multiple solvers and shared language modeling for robust ciphertext recovery across families.</p>
+                <p>Engineered a multi-language cryptanalysis suite with adaptive probabilistic solvers and rigorous empirical validation for classical cipher families.</p>
 
                 <div class="project-section-title">Key Features</div>
                 <ul>
-                    <li>Implemented three independent solvers - Metropolis-Hastings MCMC with simulated annealing, Baum-Welch HMM/EM, and a tournament-selection genetic algorithm - over a shared quadgram language model trained on 6M+ characters, with vectorised NumPy decryption in the hot loop achieving ~100k scores/second.</li>
-                    <li>Built a statistical cipher-type detector using Index of Coincidence, Kasiski examination, entropy, and bigram repeat rate; and a phase-transition analyser that empirically maps minimum ciphertext length against decryption success rate, directly connecting to the theoretical unicity distance.</li>
-                    <li>Designed a benchmarking and convergence diagnostics framework comparing all three solvers on identical test cases across five cipher families, with multi-chain consensus key reconstruction, per-letter confidence scoring, and publication-quality diagnostic plots.</li>
+                    <li>Engineered a multi-language cryptanalysis suite supporting 7 classical cipher families, implementing adaptive MCMC (with parallel tempering), Baum-Welch HMM/EM, and KPA-constrained solvers optimized over Kneser-Ney smoothed 5-gram language models.</li>
+                    <li>Formulated a statistical cipher-type detector (leveraging Index of Coincidence, Kasiski examination, and entropy) alongside a phase-transition analyzer that empirically maps ciphertext length against decryption success rates to validate theoretical unicity distances.</li>
+                    <li>Executed a rigorous 130-run empirical benchmarking framework, achieving a 100% success rate and 0.0 Symbol Error Rate (SER) on substitution and transposition ciphers by accelerating the evaluation hot loop with Numba JIT-compiled tensor operations.</li>
                 </ul>
 
                 <div class="project-section-title">Technologies</div>
                 <div>
                     <span class="tech-stack-tag">Python</span>
                     <span class="tech-stack-tag">NumPy</span>
+                    <span class="tech-stack-tag">Numba</span>
                     <span class="tech-stack-tag">MCMC</span>
                     <span class="tech-stack-tag">HMM</span>
-                    <span class="tech-stack-tag">Genetic Algorithms</span>
                 </div>
             </div>
         </div>
@@ -943,7 +940,7 @@ footer {
                 <div class="project-section-title">Key Features</div>
                 <ul>
                     <li>Architected a dual-module hospital and blood bank platform deployed via Docker Compose with a non-root Gunicorn/tini runtime. Secured the API with dual Session/JWT authentication, Argon2 hashing, and strict validation (Pydantic v2, Flask-Limiter, Talisman CSP).</li>
-                    <li>Engineered a SQL-heavy allocation engine with trigger-backed forensic auditing and compatibility matching. Implemented a Redis/Celery async pipeline for scheduled workflows and PDF/Pandas CSV exports, supported by SQLite WAL tuning to handle concurrent booking contention.</li>
+                    <li>Engineered an SQL-heavy allocation engine with trigger-backed forensic auditing and compatibility matching. Implemented a Redis/Celery async pipeline for scheduled workflows and PDF/Pandas CSV exports, supported by SQLite WAL tuning to handle concurrent booking contention.</li>
                     <li>Integrated production-grade observability featuring structured JSON logging (structlog) with cross-request X-Request-ID tracing, RFC 7807 error contracts, dependency health probes, and custom Prometheus business metrics visualized in Grafana.</li>
                 </ul>
 
@@ -960,7 +957,78 @@ footer {
             </div>
         </div>
 
-        <div class="project-card" data-categories="best-projects ai-llm full-stack">
+        <div class="project-card" data-categories="best-projects ai-llm ml-cv">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>Universal Adversarial Cloak</h3>
+                    <p class="project-subtitle">PyTorch, Hugging Face, FaceNet, CLIP</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <div class="project-links">
+                    <a href="https://github.com/990aa/universal-adversarial-cloak" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://huggingface.co/spaces/a-01a/facecloak" target="_blank" rel="noopener" title="Hugging Face Space">
+                        <img src="hf-logo.svg" alt="Hugging Face">
+                    </a>
+                </div>
+                <div class="project-section-title">Overview</div>
+                <p>Developed an adversarial optimization framework to cloak identity signals against biometric and semantic recognition models while preserving visual fidelity.</p>
+
+                <div class="project-section-title">Key Features</div>
+                <ul>
+                    <li>Engineered an adversarial optimization engine using Projected Gradient Descent (PGD) to mathematically cloak biometric and semantic identities against FaceNet and CLIP architectures.</li>
+                    <li>Enforced strict L-infinity norm constraints within the joint loss function to guarantee human-imperceptible perturbations, achieving a structural similarity index (SSIM) of &gt; 0.98 across all cloaked outputs.</li>
+                    <li>Validated attack efficacy via an automated offline benchmarking pipeline, proving high black-box transferability by successfully blinding industry-standard oracle models (ArcFace, CLIP ViT-L/14) and optimizing Mean Residual Similarity (MRS) through comprehensive ablation studies.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">PyTorch</span>
+                    <span class="tech-stack-tag">Hugging Face</span>
+                    <span class="tech-stack-tag">FaceNet</span>
+                    <span class="tech-stack-tag">CLIP</span>
+                    <span class="tech-stack-tag">PGD</span>
+                    <span class="tech-stack-tag">SSIM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card" data-categories="best-projects ml-cv data-science">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>GPU-Accelerated Geometric Image Reconstruction</h3>
+                    <p class="project-subtitle">PyTorch, NumPy, CUDA, OpenCV</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <div class="project-links">
+                    <a href="https://github.com/990aa/image-reconstruction" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="project-section-title">Overview</div>
+                <p>Built a high-throughput geometric reconstruction system that approximates photographic images with optimized primitive-based composition under strict compute budgets.</p>
+
+                <div class="project-section-title">Key Features</div>
+                <ul>
+                    <li>Architected a GPU-accelerated sequential hill-climbing engine to iteratively reconstruct high-fidelity photographic images using geometric primitives, employing a coarse-to-fine multi-stage schedule to capture both foundational structures and micro-details.</li>
+                    <li>Formulated an analytic closed-form color solver and integrated Sobel-based gradient maps for structure-aware shape routing, completely eliminating stochastic color search loops and maximizing algorithmic convergence speed.</li>
+                    <li>Executed rigorous empirical ablation studies across 11 architectural variants, achieving a peak Structural Similarity (SSIM) of 0.6059 and PSNR of 17.96 dB within a strict 1-minute compute budget, significantly outperforming standard evolutionary baselines.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">PyTorch</span>
+                    <span class="tech-stack-tag">NumPy</span>
+                    <span class="tech-stack-tag">CUDA</span>
+                    <span class="tech-stack-tag">OpenCV</span>
+                    <span class="tech-stack-tag">SSIM</span>
+                    <span class="tech-stack-tag">PSNR</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card" data-categories="ai-llm full-stack">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Phantom Local AI Overlay Assistant</h3>
@@ -1068,41 +1136,39 @@ footer {
             </div>
         </div>
 
-        <div class="project-card" data-categories="older-projects">
+        <div class="project-card" data-categories="ml-cv">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
-                    <h3>FacultySync: University Schedule &amp; Conflict Manager</h3>
-                    <p class="project-subtitle">Java, JavaFX, SQLite, Gradle, JUnit</p>
+                    <h3>Signature Verification System with Explainable AI</h3>
+                    <p class="project-subtitle">Siamese Neural Network for offline authentication</p>
                 </div>
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="project-details">
                 <div class="project-links">
-                    <a href="https://github.com/990aa/facultysync" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/990aa/sign-verification" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
                 </div>
                 <div class="project-section-title">Overview</div>
-                <p>Built a modern JavaFX desktop platform for university scheduling, room-conflict detection, and automated conflict resolution with native Windows integration.</p>
+                <p>Determines signature authenticity by comparing a query signature against a known reference - entirely offline via metric learning.</p>
 
-                <div class="project-section-title">Key Features</div>
+                <div class="project-section-title">Algorithmic Strategy</div>
                 <ul>
-                    <li>Implemented schedule import/export, conflict detection, and auto-resolution using an IntervalTree-based conflict engine and a backtracking resolver that reassigns events while ensuring no new overlaps are introduced.</li>
-                    <li>Engineered a custom undecorated JavaFX interface with native-feel window controls, weekly drag-and-drop calendar, multi-tab dashboard, analytics charts, and animated toast notifications.</li>
-                    <li>Integrated SQLite persistence (WAL mode, foreign keys, indexed overlap queries), GitHub Releases auto-update checks, background-threaded JavaFX tasks for non-blocking I/O, and comprehensive automated test coverage across model, DB, algorithms, and I/O layers.</li>
+                    <li><strong>Siamese Architecture:</strong> Dual-branch CNN sharing weights to map signatures into a common embedding space.</li>
+                    <li><strong>Metric Learning:</strong> Contrastive / Triplet Loss to minimise distance between genuine pairs and maximise it for forgeries.</li>
+                    <li><strong>Preprocessing Pipeline:</strong> Normalisation, binarisation, and noise reduction for robust feature extraction.</li>
                 </ul>
 
                 <div class="project-section-title">Technologies</div>
                 <div>
-                    <span class="tech-stack-tag">Java 25</span>
-                    <span class="tech-stack-tag">JavaFX</span>
-                    <span class="tech-stack-tag">SQLite</span>
-                    <span class="tech-stack-tag">Gradle</span>
-                    <span class="tech-stack-tag">JUnit 5</span>
-                    <span class="tech-stack-tag">SystemTray</span>
+                    <span class="tech-stack-tag">Deep Learning</span>
+                    <span class="tech-stack-tag">Computer Vision</span>
+                    <span class="tech-stack-tag">Siamese Networks</span>
+                    <span class="tech-stack-tag">Python</span>
                 </div>
             </div>
         </div>
 
-        <div class="project-card" data-categories="older-projects">
+        <div class="project-card" data-categories="ml-cv data-science">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>IsoFace: CPU-Optimized Face Clustering</h3>
@@ -1136,7 +1202,41 @@ footer {
             </div>
         </div>
 
-        <div class="project-card" data-categories="older-projects">
+        <div class="project-card" data-categories="full-stack project-journey">
+            <div class="project-header" onclick="toggleProject(this)">
+                <div class="project-title-group">
+                    <h3>FacultySync: University Schedule &amp; Conflict Manager</h3>
+                    <p class="project-subtitle">Java, JavaFX, SQLite, Gradle, JUnit</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="project-details">
+                <div class="project-links">
+                    <a href="https://github.com/990aa/facultysync" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="project-section-title">Overview</div>
+                <p>Built a modern JavaFX desktop platform for university scheduling, room-conflict detection, and automated conflict resolution with native Windows integration.</p>
+
+                <div class="project-section-title">Key Features</div>
+                <ul>
+                    <li>Implemented schedule import/export, conflict detection, and auto-resolution using an IntervalTree-based conflict engine and a backtracking resolver that reassigns events while ensuring no new overlaps are introduced.</li>
+                    <li>Engineered a custom undecorated JavaFX interface with native-feel window controls, weekly drag-and-drop calendar, multi-tab dashboard, analytics charts, and animated toast notifications.</li>
+                    <li>Integrated SQLite persistence (WAL mode, foreign keys, indexed overlap queries), GitHub Releases auto-update checks, background-threaded JavaFX tasks for non-blocking I/O, and comprehensive automated test coverage across model, DB, algorithms, and I/O layers.</li>
+                </ul>
+
+                <div class="project-section-title">Technologies</div>
+                <div>
+                    <span class="tech-stack-tag">Java 25</span>
+                    <span class="tech-stack-tag">JavaFX</span>
+                    <span class="tech-stack-tag">SQLite</span>
+                    <span class="tech-stack-tag">Gradle</span>
+                    <span class="tech-stack-tag">JUnit 5</span>
+                    <span class="tech-stack-tag">SystemTray</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card" data-categories="full-stack project-journey">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Vehicle Parking Management System</h3>
@@ -1168,7 +1268,7 @@ footer {
             </div>
         </div>
 
-        <div class="project-card" data-categories="older-projects">
+        <div class="project-card" data-categories="ml-cv project-journey">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Real-Time Hand Gesture Recognition System</h3>
@@ -1204,39 +1304,7 @@ footer {
             </div>
         </div>
 
-        <div class="project-card" data-categories="older-projects">
-            <div class="project-header" onclick="toggleProject(this)">
-                <div class="project-title-group">
-                    <h3>Signature Verification System with Explainable AI</h3>
-                    <p class="project-subtitle">Siamese Neural Network for offline authentication</p>
-                </div>
-                <span class="toggle-icon">▼</span>
-            </div>
-            <div class="project-details">
-                <div class="project-links">
-                    <a href="https://github.com/990aa/sign-verification" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-                </div>
-                <div class="project-section-title">Overview</div>
-                <p>Determines signature authenticity by comparing a query signature against a known reference - entirely offline via metric learning.</p>
-
-                <div class="project-section-title">Algorithmic Strategy</div>
-                <ul>
-                    <li><strong>Siamese Architecture:</strong> Dual-branch CNN sharing weights to map signatures into a common embedding space.</li>
-                    <li><strong>Metric Learning:</strong> Contrastive / Triplet Loss to minimise distance between genuine pairs and maximise it for forgeries.</li>
-                    <li><strong>Preprocessing Pipeline:</strong> Normalisation, binarisation, and noise reduction for robust feature extraction.</li>
-                </ul>
-
-                <div class="project-section-title">Technologies</div>
-                <div>
-                    <span class="tech-stack-tag">Deep Learning</span>
-                    <span class="tech-stack-tag">Computer Vision</span>
-                    <span class="tech-stack-tag">Siamese Networks</span>
-                    <span class="tech-stack-tag">Python</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card" data-categories="older-projects">
+        <div class="project-card" data-categories="data-science project-journey">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Interactive Customer Segmentation &amp; Analytics Engine</h3>
@@ -1269,7 +1337,7 @@ footer {
             </div>
         </div>
 
-        <div class="project-card" data-categories="older-projects">
+        <div class="project-card" data-categories="data-science project-journey">
             <div class="project-header" onclick="toggleProject(this)">
                 <div class="project-title-group">
                     <h3>Advanced House Price Prediction System</h3>
@@ -1313,9 +1381,9 @@ footer {
                 <span class="institution">Manipal Academy of Higher Education</span>
                 <span class="year">2024 – 2028</span>
             </div>
-            <div class="degree">B.Tech. (Honours) — Computer Science &amp; Engineering, Specialisation in AI &amp; ML</div>
+            <div class="degree">B.Tech. Computer Science and Engineering</div>
             <div class="coursework">
-                <strong>Key Coursework:</strong> Linear Algebra, Calculus, Discrete Math, AI, OOP, DevOps, Cloud Computing, Automata Theory, Compiler Design, Parallel Computing, Digital Systems, Computer Networks, OS, Quantum Computing
+                <strong>Key Coursework:</strong> Multivariable Calculus &amp; Numerical Methods, Linear Algebra, Discrete Mathematics, Automata Theory &amp; Compiler Design, DevOps &amp; Cloud Computing
             </div>
         </div>
 
@@ -1324,9 +1392,9 @@ footer {
                 <span class="institution">Indian Institute of Technology Madras</span>
                 <span class="year">2024 – 2028</span>
             </div>
-            <div class="degree">B.S. — Data Science and Applications</div>
+            <div class="degree">B.S. Data Science and Application | CGPA: 9.5/10</div>
             <div class="coursework">
-                <strong>Key Coursework:</strong> Probability &amp; Optimisation, Statistics, DSA, DBMS, Machine Learning, Deep Learning, Generative AI, NLP, LLMs, Computer Vision, MLOps, Tools in Data Science, Application Development
+                <strong>Key Coursework:</strong> Deep Learning, Generative AI, Probability &amp; Optimization, Algorithm Design, Machine Learning, Tools in Data Science, Application Development
             </div>
         </div>
     </section>
@@ -1341,22 +1409,10 @@ footer {
             <div class="cert-body">
                 <a href="https://www.credly.com/badges/bbf438ab-51c2-43db-a26b-8e5e1115e555/linked_in_profile"
                    target="_blank" rel="noopener" class="cert-link">
-                    AWS Academy Graduate: Machine Learning Training
+                    AWS Academy Graduate - Machine Learning Foundation
                     <i class="fas fa-arrow-up-right-from-square"></i>
                 </a>
-                <div class="cert-detail">SageMaker, Rekognition, Comprehend, Forecast, Lex, Kendra, Fraud Detection</div>
-            </div>
-        </div>
-
-        <div class="cert-item">
-            <i class="fas fa-award cert-icon"></i>
-            <div class="cert-body">
-                <a href="https://www.coursera.org/account/accomplishments/specialization/HKUWHVUFU8V5"
-                   target="_blank" rel="noopener" class="cert-link">
-                    RAG &amp; Agentic AI Professional Certificate
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
-                <div class="cert-detail">LangChain, LlamaIndex, Agentic Frameworks (CrewAI, AutoGen)</div>
+                <div class="cert-detail">Expertise in integrating cloud-native AWS AI services (SageMaker, Comprehend, Fraud Detection) into application backends.</div>
             </div>
         </div>
 
@@ -1368,7 +1424,19 @@ footer {
                     MLOps Specialization
                     <i class="fas fa-arrow-up-right-from-square"></i>
                 </a>
-                <div class="cert-detail">Azure ML, MLFlow, Hugging Face deployment pipelines</div>
+                <div class="cert-detail">Certified in Azure ML, MLFlow, and Hugging Face inference pipelines.</div>
+            </div>
+        </div>
+
+        <div class="cert-item">
+            <i class="fas fa-award cert-icon"></i>
+            <div class="cert-body">
+                <a href="https://www.coursera.org/account/accomplishments/specialization/HKUWHVUFU8V5"
+                   target="_blank" rel="noopener" class="cert-link">
+                    RAG &amp; Agentic AI Professional
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+                <div class="cert-detail">Certified in LangChain, LlamaIndex, and orchestrating multi-agent frameworks (CrewAI) for software applications.</div>
             </div>
         </div>
     </section>

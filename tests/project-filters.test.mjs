@@ -32,7 +32,7 @@ const categoryButtons = Array.from(document.querySelectorAll('.project-category-
 const allCards = Array.from(document.querySelectorAll('#projects .project-card'));
 
 assert.equal(categoryButtons.length, 6, 'Expected 6 project category buttons');
-assert.ok(allCards.length >= 13, 'Expected project cards to be present');
+assert.ok(allCards.length >= 15, 'Expected project cards to be present');
 
 function visibleTitles() {
     return allCards
@@ -53,55 +53,69 @@ function activeCategoryLabel() {
 
 const expectedBest = [
     'Kivixa Productivity Workspace',
-    'Unsupervised Cipher Cracking',
+    'Cryptex: Unsupervised Cryptanalysis Engine',
     'Hospital Operations System',
-    'Phantom Local AI Overlay Assistant'
+    'Universal Adversarial Cloak',
+    'GPU-Accelerated Geometric Image Reconstruction'
 ];
 
 assert.equal(activeCategoryLabel(), 'Best Projects', 'Best Projects should be active by default');
 assert.deepEqual(visibleTitles(), expectedBest, 'Best Projects list does not match expected projects');
 assert.ok(!visibleTitles().includes('FacultySync: University Schedule & Conflict Manager'), 'FacultySync must not be in Best Projects');
-assert.ok(!visibleTitles().includes('IsoFace: CPU-Optimized Face Clustering'), 'IsoFace must not be in Best Projects');
-assert.ok(!visibleTitles().includes('NovelCrafter: Fine-Tuned Literary LLM'), 'NovelCrafter must not be in Best Projects');
+assert.ok(!visibleTitles().includes('Phantom Local AI Overlay Assistant'), 'Phantom must not be in Best Projects');
 
 clickCategory('AI & LLM Systems');
 const aiTitles = visibleTitles();
 assert.ok(aiTitles.includes('Kivixa Productivity Workspace'), 'Kivixa should appear in AI & LLM Systems');
 assert.ok(aiTitles.includes('Phantom Local AI Overlay Assistant'), 'Phantom should appear in AI & LLM Systems');
 assert.ok(aiTitles.includes('NovelCrafter: Fine-Tuned Literary LLM'), 'NovelCrafter should appear in AI & LLM Systems');
+assert.ok(aiTitles.includes('Universal Adversarial Cloak'), 'Universal Adversarial Cloak should appear in AI & LLM Systems');
+assert.ok(aiTitles.length > 1, 'AI & LLM Systems should contain multiple projects');
 
 clickCategory('Machine Learning & Computer Vision');
 const mlTitles = visibleTitles();
 assert.ok(mlTitles.includes('Hybrid Image Classification: SVM with Deep Feature Extraction'), 'Hybrid Image Classification should appear in ML/CV');
-assert.equal(mlTitles.length, 1, 'Only Hybrid Image Classification should appear in ML/CV');
+assert.ok(mlTitles.includes('Cryptex: Unsupervised Cryptanalysis Engine'), 'Cryptex should appear in ML/CV');
+assert.ok(mlTitles.includes('Universal Adversarial Cloak'), 'Universal Adversarial Cloak should appear in ML/CV');
+assert.ok(mlTitles.includes('GPU-Accelerated Geometric Image Reconstruction'), 'GPU reconstruction should appear in ML/CV');
+assert.ok(mlTitles.includes('IsoFace: CPU-Optimized Face Clustering'), 'IsoFace should appear in ML/CV');
+assert.ok(mlTitles.includes('Signature Verification System with Explainable AI'), 'Signature Verification should appear in ML/CV');
+assert.ok(mlTitles.includes('Real-Time Hand Gesture Recognition System'), 'Hand Gesture should appear in ML/CV');
+assert.ok(mlTitles.length > 1, 'Machine Learning & Computer Vision should contain multiple projects');
 
 clickCategory('Full-Stack Platforms');
 const fullStackTitles = visibleTitles();
 assert.ok(fullStackTitles.includes('Hospital Operations System'), 'Hospital Operations should appear in Full-Stack');
 assert.ok(fullStackTitles.includes('Kivixa Productivity Workspace'), 'Kivixa should appear in Full-Stack');
 assert.ok(fullStackTitles.includes('Phantom Local AI Overlay Assistant'), 'Phantom should appear in Full-Stack');
-assert.equal(fullStackTitles.length, 3, 'Only Kivixa, Hospital, and Phantom should appear in Full-Stack');
+assert.ok(fullStackTitles.includes('FacultySync: University Schedule & Conflict Manager'), 'FacultySync should appear in Full-Stack');
+assert.ok(fullStackTitles.includes('Vehicle Parking Management System'), 'Vehicle Parking should appear in Full-Stack');
+assert.ok(fullStackTitles.length > 1, 'Full-Stack Platforms should contain multiple projects');
 
 clickCategory('Data Science & Analytics');
 const dataTitles = visibleTitles();
-assert.ok(dataTitles.includes('Unsupervised Cipher Cracking'), 'Unsupervised Cipher Cracking should appear in Data Science');
-assert.equal(dataTitles.length, 1, 'Only Unsupervised Cipher Cracking should appear in Data Science');
+assert.ok(dataTitles.includes('Cryptex: Unsupervised Cryptanalysis Engine'), 'Cryptex should appear in Data Science');
+assert.ok(dataTitles.includes('GPU-Accelerated Geometric Image Reconstruction'), 'GPU reconstruction should appear in Data Science');
+assert.ok(dataTitles.includes('IsoFace: CPU-Optimized Face Clustering'), 'IsoFace should appear in Data Science');
+assert.ok(dataTitles.includes('Interactive Customer Segmentation & Analytics Engine'), 'Customer Segmentation should appear in Data Science');
+assert.ok(dataTitles.includes('Advanced House Price Prediction System'), 'House Price should appear in Data Science');
+assert.ok(dataTitles.length > 1, 'Data Science & Analytics should contain multiple projects');
 
-clickCategory('Older Projects');
-const olderTitles = visibleTitles();
+clickCategory('Project Journey');
+const journeyTitles = visibleTitles();
 assert.deepEqual(
-    olderTitles,
+    journeyTitles,
     [
         'FacultySync: University Schedule & Conflict Manager',
-        'IsoFace: CPU-Optimized Face Clustering',
         'Vehicle Parking Management System',
         'Real-Time Hand Gesture Recognition System',
-        'Signature Verification System with Explainable AI',
         'Interactive Customer Segmentation & Analytics Engine',
         'Advanced House Price Prediction System'
     ],
-    'Older Projects order or membership does not match expected list'
+    'Project Journey order or membership does not match expected list'
 );
+assert.ok(!journeyTitles.includes('Signature Verification System with Explainable AI'), 'Signature Verification must not appear in Project Journey');
+assert.ok(!journeyTitles.includes('IsoFace: CPU-Optimized Face Clustering'), 'IsoFace must not appear in Project Journey');
 
 clickCategory('Best Projects');
 const bestVisibleCards = allCards.filter((card) => !card.classList.contains('is-hidden'));
