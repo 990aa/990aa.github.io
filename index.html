@@ -354,28 +354,9 @@ h2::after {
     line-height: 1.6;
 }
 
-.tag.core {
-    background: var(--accent-light);
-    border-color: #C7D2FE;
+.skill-tags .tag:hover {
+    border-color: var(--accent);
     color: var(--accent);
-    font-weight: 500;
-}
-
-.skills-legend {
-    font-size: 0.76rem;
-    color: var(--text-muted);
-    margin-top: 0.7rem;
-}
-
-.skills-legend-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: var(--accent-light);
-    border: 1px solid #C7D2FE;
-    border-radius: 2px;
-    margin-right: 4px;
-    vertical-align: middle;
 }
 
 .project-categories {
@@ -740,102 +721,67 @@ footer {
                 <tr>
                     <td class="skill-label">Languages</td>
                     <td class="skill-tags">
-                        <span class="tag core">Python</span>
-                        <span class="tag core">TypeScript</span>
-                        <span class="tag core">Dart</span>
-                        <span class="tag core">Rust</span>
-                        <span class="tag core">SQL</span>
-                        <span class="tag">Java</span>
-                        <span class="tag">C</span>
+                        <a class="tag" href="https://www.python.org/" target="_blank" rel="noopener">Python</a>
+                        <a class="tag" href="https://www.rust-lang.org/" target="_blank" rel="noopener">Rust</a>
+                        <a class="tag" href="https://www.typescriptlang.org/" target="_blank" rel="noopener">TypeScript</a>
+                        <a class="tag" href="https://dart.dev/" target="_blank" rel="noopener">Dart</a>
+                        <a class="tag" href="https://www.iso.org/standard/76583.html" target="_blank" rel="noopener">SQL</a>
                     </td>
                 </tr>
                 <tr>
-                    <td class="skill-label">AI / ML</td>
+                    <td class="skill-label">Deep Learning &amp; Generative AI</td>
                     <td class="skill-tags">
-                        <span class="tag core">PyTorch</span>
-                        <span class="tag core">TensorFlow</span>
-                        <span class="tag core">Scikit-learn</span>
-                        <span class="tag core">Hugging Face</span>
-                        <span class="tag core">Keras</span>
-                        <span class="tag core">XGBoost</span>
-                        <span class="tag core">CatBoost</span>
-                        <span class="tag core">LightGBM</span>
-                        <span class="tag core">OpenCV</span>
-                        <span class="tag core">YOLO</span>
-                        <span class="tag core">MediaPipe</span>
-                        <span class="tag core">spaCy</span>
-                        <span class="tag core">Transformers</span>
-                        <span class="tag core">Ultralytics</span>
+                        <a class="tag" href="https://pytorch.org/" target="_blank" rel="noopener">PyTorch</a>
+                        <a class="tag" href="https://huggingface.co/" target="_blank" rel="noopener">Hugging Face</a>
+                        <a class="tag" href="https://huggingface.co/docs/transformers/index" target="_blank" rel="noopener">Transformers</a>
+                        <a class="tag" href="https://huggingface.co/docs/peft/index" target="_blank" rel="noopener">PEFT/LoRA</a>
+                        <a class="tag" href="https://github.com/ggml-org/llama.cpp" target="_blank" rel="noopener">llama.cpp</a>
+                        <a class="tag" href="https://docs.unsloth.ai/" target="_blank" rel="noopener">Unsloth</a>
+                        <a class="tag" href="https://www.langchain.com/langgraph" target="_blank" rel="noopener">LangGraph</a>
                     </td>
                 </tr>
                 <tr>
-                    <td class="skill-label">GenAI / LLM</td>
+                    <td class="skill-label">Machine Learning &amp; Applied Math</td>
                     <td class="skill-tags">
-                        <span class="tag core">LangChain</span>
-                        <span class="tag core">LlamaIndex</span>
-                        <span class="tag core">LoRA / PEFT</span>
-                        <span class="tag core">Unsloth</span>
-                        <span class="tag core">llama.cpp</span>
-                        <span class="tag core">Ollama</span>
-                        <span class="tag core">Vector DBs</span>
-                        <span class="tag">LangGraph</span>
-                        <span class="tag">vLLM</span>
+                        <a class="tag" href="https://scikit-learn.org/stable/" target="_blank" rel="noopener">Scikit-learn</a>
+                        <a class="tag" href="https://xgboost.readthedocs.io/" target="_blank" rel="noopener">XGBoost</a>
+                        <a class="tag" href="https://opencv.org/" target="_blank" rel="noopener">OpenCV</a>
+                        <a class="tag" href="https://numpy.org/" target="_blank" rel="noopener">NumPy</a>
+                        <a class="tag" href="https://scipy.org/" target="_blank" rel="noopener">SciPy</a>
+                        <a class="tag" href="https://pola.rs/" target="_blank" rel="noopener">Polars</a>
                     </td>
                 </tr>
                 <tr>
-                    <td class="skill-label">Data</td>
+                    <td class="skill-label">Distributed Systems &amp; Backend</td>
                     <td class="skill-tags">
-                        <span class="tag core">Pandas</span>
-                        <span class="tag core">NumPy</span>
-                        <span class="tag core">Polars</span>
-                        <span class="tag core">DuckDB</span>
-                        <span class="tag core">SciPy</span>
-                        <span class="tag core">Matplotlib</span>
-                        <span class="tag core">Seaborn</span>
-                        <span class="tag core">Plotly</span>
+                        <a class="tag" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener">FastAPI</a>
+                        <a class="tag" href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a>
+                        <a class="tag" href="https://docs.celeryq.dev/" target="_blank" rel="noopener">Celery</a>
+                        <a class="tag" href="https://redis.io/" target="_blank" rel="noopener">Redis</a>
+                        <a class="tag" href="https://www.docker.com/" target="_blank" rel="noopener">Docker</a>
+                        <a class="tag" href="https://aws.amazon.com/" target="_blank" rel="noopener">AWS</a>
                     </td>
                 </tr>
                 <tr>
-                    <td class="skill-label">Backend / Cloud</td>
+                    <td class="skill-label">Databases &amp; Observability</td>
                     <td class="skill-tags">
-                        <span class="tag core">FastAPI</span>
-                        <span class="tag core">Docker</span>
-                        <span class="tag core">Flask</span>
-                        <span class="tag core">Django</span>
-                        <span class="tag core">Celery</span>
-                        <span class="tag core">Redis</span>
-                        <span class="tag">AWS</span>
-                        <span class="tag">MLFlow</span>
-                        <span class="tag">AzureML</span>
-                        <span class="tag">Gunicorn</span>
-                        <span class="tag">Uvicorn</span>
-                        <span class="tag">Vercel</span>
+                        <a class="tag" href="https://www.postgresql.org/" target="_blank" rel="noopener">PostgreSQL</a>
+                        <a class="tag" href="https://www.sqlite.org/" target="_blank" rel="noopener">SQLite</a>
+                        <a class="tag" href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a>
+                        <a class="tag" href="https://prometheus.io/" target="_blank" rel="noopener">Prometheus</a>
+                        <a class="tag" href="https://grafana.com/" target="_blank" rel="noopener">Grafana</a>
                     </td>
                 </tr>
                 <tr>
-                    <td class="skill-label">Frontend / Mobile</td>
+                    <td class="skill-label">Cross-Platform &amp; Client Apps</td>
                     <td class="skill-tags">
-                        <span class="tag core">Flutter</span>
-                        <span class="tag core">Next.js</span>
-                        <span class="tag core">Tauri</span>
-                        <span class="tag">JavaFX</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="skill-label">Databases</td>
-                    <td class="skill-tags">
-                        <span class="tag core">PostgreSQL</span>
-                        <span class="tag core">OracleDB</span>
-                        <span class="tag core">SQLite</span>
-                        <span class="tag core">MongoDB</span>
+                        <a class="tag" href="https://vuejs.org/" target="_blank" rel="noopener">Vue.js</a>
+                        <a class="tag" href="https://flutter.dev/" target="_blank" rel="noopener">Flutter</a>
+                        <a class="tag" href="https://tauri.app/" target="_blank" rel="noopener">Tauri</a>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <p class="skills-legend">
-            <span class="skills-legend-dot"></span>
-            Highlighted = core proficiency
-        </p>
     </section>
 
     
